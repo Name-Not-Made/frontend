@@ -1,0 +1,33 @@
+<div id="get">
+  <div class="toolbar">
+    <h1>Chapter name</h1>
+    <a class="back" href="#">Back</a><a class="button" href="javascript:void">Settings</a>
+  </div>
+  <div class="scroll">
+    <img src="img/photo_2021-03-17_16-48-47.jpg" class="page" alt="">
+    <img src="img/photo_2021-03-17_16-48-47.jpg" class="page" alt="">
+  </div>
+  <div style='top: auto;bottom: 0px;background-color: #1a1a1a61;' class="toolbar">
+    <h1>nnn/mmm</h1>
+    <a style="left: 25%;" onclick="plusDivs(-1)" class="button leftbutton" href="javascript:void">&#10094;</a>
+    <a style="right: 25%;" class="button" href="javascript:void">&#10095;</a>
+  </div>
+
+</div>
+<script>var slideIndex = 1;
+  showDivs(slideIndex);
+
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("page");
+    if (n > x.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = x.length };
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    x[slideIndex - 1].style.display = "block";
+  }</script>
