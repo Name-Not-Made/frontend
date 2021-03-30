@@ -1,0 +1,91 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/vanilla.css">
+    <title>Manga app</title>
+    <script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jqt.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+        var jQT = new $.jQTouch({
+            icon: 'jqtouch.png',
+            addGlossToIcon: false,
+            startupScreen: 'jqt_startup.png',
+            statusBar: 'black'
+        });
+
+        $(function () {
+            // Custom Javascript (onReady)
+        });
+    </script>
+    <style type="text/css" media="screen">
+
+    </style>
+</head>
+
+<body>
+    <div id="jqt">
+
+        <div id="home" class="current">
+            <div class="toolbar">
+                <center style="margin-inline: 20%;"><input class="si" type="search" name="search" placeholder="Search"
+                        id="some_name" /></center>
+                <a class="button leftbutton" href="#">Menu</a>
+                <a class="button slideup" id="infoButton" href="#login">Login</a>
+            </div>
+            <div class="scroll">
+                <center>
+                    <ul class="individual">
+                        <li><a href="manga.html"></a></li>
+                        <li><a></a></li>
+                        <li><a href="">im</a></li>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                        <li><a href=""></a></li>
+                    </ul>
+                </center>
+
+            </div>
+
+
+        </div>
+        <div id="reg">
+            <div class="toolbar">
+                <h1>Registration</h1>
+                <a class="back" href="#home">Back</a>
+            </div>
+            <form class="scroll"><ul class="edit ">
+                    <li>Username: <input type="text" name="name" placeholder="Username" /></li>
+                    <li>Email: <input type="email" name="email" placeholder="Email" /></li>
+                    <li>Password: <input type="password" name="pass" placeholder="Password" /></li>
+                    <li>Confim Password: <input type="password" name="pass2" placeholder="Confim Password" /></li>
+                    <li><a class="button " href="javascript:void"
+                            style="position: static;text-align: center;">Register</a></li>
+                    <li>Already have an account: <a class="button " href="#login"
+                            style="position: static;text-align: center;">Login</a></li>
+                </ul>
+                
+            </form>
+        </div>
+        <div id="login">
+            <div class="toolbar">
+                <h1>Login</h1>
+                <a class="back" href="#home">Back</a>
+            </div>
+            <form class="scroll"><ul class="edit ">
+                    <li>Username or Email: <input type="text" name="name" placeholder="Username or  Email" /></li>
+                    <li>Password: <input type="password" name="pass" placeholder="Password" /></li>
+                    <li><a class="button " href="javascript:void" style="position: static;text-align: center;">Login</a>
+                    </li>
+                    <li>Dont have an account: <a class="leftbutton button " href="#reg"
+                            style="position: static;text-align: center;">Register</a></li>
+                </ul>
+                
+            </form>
+        </div>
+</body>
+
+</html>
