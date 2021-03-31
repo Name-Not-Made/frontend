@@ -1,0 +1,32 @@
+<div id="get">
+    <div class="toolbar">
+        <a class="back" href="#">Back</a>
+        <center style="margin-inline: 20%;">
+            <input class="si" type="search" name="search" placeholder="Search" id="some_name" />
+        </center>
+    </div>
+    <div class="info">
+        <center>
+            <h1>Showing results for <i>x</i><br> found <i>n</i> results.</h1>
+        </center>
+        <ul>
+            <li><label for="sb1">Sort by:</label><select class="s" name="sb" id="sb1">
+                    <option value="1">relevance</option>
+                    <option value="2">upload date</option>
+                    <option value="3">ratings</option>
+                    <option value="4">last updated</option>
+                </select></li>
+            <li><label for="gn">Genre: </label><select class="s" name="a" id="gn">
+                    <option value="a">Action</option>
+                    <option value="b">Adventure</option>
+                </select></li>
+            <li>NSFW toggle<span class="toggle"><input type="checkbox" /></span></li>
+            <li style="padding: 20;"> <a style="padding: 0 10;" class="button" href="javascript:void">Filter</a></li>
+        </ul>
+    </div>
+    <style>
+        #jqt .s {
+            width: 75%;
+            margin-left: 15;
+        }
+    </style>
