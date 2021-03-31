@@ -1,0 +1,108 @@
+<div id="user">
+    <div class="toolbar">
+        <h1>Username</h1>
+        <a class="back" href="#">Back</a>
+        <a class="button" href="#wrmsg">Message</a>
+    </div>
+
+    <div class="scroll">
+        <center class="contain">
+            <ul class="ut">
+                <li><span class="ppic2"> </span>
+                    <h1 class="h">Username</h1><span class="badge2">badge</span>
+                    <hr class="l2">
+                    <p class="r2">
+                        Qui laboriosam quam quis sint occaecati sed nostrum ullam. Sunt placeat provident est
+                        praesentium
+                        debitis accusamus doloremque. A corrupti quis accusantium delectus. Qui expedita ut id omnis.
+                        Consequatur voluptas optio velit omnis quis cum architecto.</p>
+                </li>
+            </ul>
+            <ul class="ut">
+                <li>Joined n days ago
+                </li>
+                <li style="overflow-x: scroll; white-space: nowrap;">in group#1, group#2A corrupti quis accusantium
+                    delectus. Qui expedita ut id omnis.
+                    Consequatur voluptas optio velit omnis quis cum architecto </li>
+                <li>Uploaded n chapters</li>
+                <li>n Followers</li>
+                <li>n Views</li>
+            </ul>
+    </div>
+    </center>
+    <ul>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+    </ul>
+</div>
+<div id="wrmsg">
+    <div class="toolbar">
+        <h1>Write a Message...</h1>
+        <a class="back" href="#">Back</a>
+    </div>
+
+    <div class="scroll">
+        <ul>
+            <li><textarea name="" id="" cols="30" rows="10"></textarea></li>
+            <li style="padding: 20;"> <a style="padding: 0 10;" class="button" href="javascript:void">Send</a></li>
+        </ul>
+
+    </div>
+</div>
+<style>
+    .ppic2 {
+        margin-top: 10px;
+        width: 150px;
+        height: 150px;
+        background-color: #b4b4b4;
+        border-radius: 75px;
+        display: block;
+    }
+
+    .badge2 {
+        border: 1px solid #b4b4b4;
+        padding: 3px;
+        margin: 15px;
+        color: #b4b4b4;
+    }
+
+    #jqt .h {
+
+        display: block;
+    }
+
+    .l2 {
+        margin: 10;
+    }
+
+    .r2 {
+        margin: 15;
+        color: #b4b4b4;
+    }
+
+    /* #jqt .ut {
+        float: left;
+        width: 60%;
+        margin-right: 2;
+    }
+     */
+    #jqt .ut+.ut {
+        width: auto;
+        min-width: 200px;
+        margin-left: 0;
+        height: 240px;
+    }
+
+    .contain {
+        display: flex;
+        flex-direction: row;
+    }
+
+    @media (max-width:540px) {
+        .contain {
+            flex-direction: column;
+        }
+    }
+</style>
