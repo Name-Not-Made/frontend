@@ -1,0 +1,28 @@
+<div id="dashboard">
+    <div class="toolbar">
+        <center style="margin-inline: 20%;">
+            <h1>Dashboard</h1>
+        </center>
+        <a class="button leftbutton" href="javascript:void" onmousedown="showMenu()">Menu</a>
+        <a class="button slideup" id="infoButton" href="javascript:void">Sign out</a>
+    </div>    <div class="scroll">
+    </div>
+        <ul id="menu"  style="margin: 45 0 0 0; height: 90%; color: #b4b4b4;position: absolute;top: 0;display: none;left: 0;width: 240px;">
+            <li><a href="">Dashboard</a></li>
+            <li><a href="">Upload</a></li>
+            <li><a href="">Comments</a></li>
+            <li><a href="">Messages</a></li>
+            <li><a href="">Analytics</a></li>
+        </ul>
+</div>
+
+<script>
+    function showMenu() {
+        console.log('menu clicked')
+        if (document.getElementById("menu").style.display == "none") {
+            document.getElementById("menu").style.display = "block";
+        } else {
+            document.getElementById("menu").style.display = "none"
+        }
+    }
+</script>
