@@ -1,23 +1,49 @@
-<div id="get">
+<div id="chapter">
   <div class="toolbar">
     <h1>Chapter name</h1>
     <a class="back" href="#">Back</a><a class="button" href="javascript:void">Settings</a>
   </div>
   <div class="scroll">
     <img src="img/photo_2021-03-17_16-48-47.jpg" class="page" alt="">
-   </div>
+  </div>
   <div style='top: auto;bottom: 0px;background-color: #1a1a1a61;' class="toolbar">
-    <h1>nnn/mmm</h1>
-    <a style="left: 25%;" onclick="plusDivs(-1)" class="button leftbutton" href="javascript:void">&#10094;</a>
-    <a style="right: 25%;" class="button" onclick="plusDivs(1)" href="javascript:void">&#10095;</a>
-    <input type="range" name="" id="zoomslider">
+   <h1>nnn/mmm</h1>
+      <a onclick="plusDivs(-1)" class="button leftbutton" href="javascript:void">&#10094;</a>
+    <a style="left: 48;right: auto;" class="button" onclick="plusDivs(1)" href="javascript:void">&#10095;</a>
+
+    
+    
+    <span id="zoom">Zoom: <input type="range" id="zoomslider"></span>
   </div>
 
 </div>
+<style>
+  #zoom {
+    float: right;
+    color: #b4b4b4;
+  }
+
+  @media (max-width: 600px) {
+    #zoom {
+      display: none;
+    }
+  }
+</style>
+
 <script>
-var images = document.getElementsByClassName("page");
-var slider = document.getElementById("zoomslider");
-var slideIndex = 1;
+  var images = document.getElementsByClassName("page");
+  var slider = document.getElementById("zoomslider");
+  for (i = 0; i < images.length; i++) {
+    images[i].style.width = slider.value * 2 + "%"; // Initial zoom
+  }
+  // Update the zoom value (each time you drag the slider handle)
+  slider.oninput = function () {
+    for (i = 0; i < images.length; i++) {
+      images[i].style.width = slider.value * 2 + "%";
+    }
+  }
+
+  var slideIndex = 1;
   showDivs(slideIndex);
 
   function plusDivs(n) {
@@ -33,4 +59,4 @@ var slideIndex = 1;
     }
     images[slideIndex - 1].style.display = "block";
   }
-  </script>
+</script>
