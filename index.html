@@ -6,21 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/vanilla.css">
     <title>Manga app</title>
-    <script src="js/browser.js"></script>
-    <script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/jqt.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" charset="utf-8">
-        var jQT = new $.jQTouch({
-            icon: 'jqtouch.png',
-            addGlossToIcon: false,
-            startupScreen: 'jqt_startup.png',
-            statusBar: 'black'
-        });
 
-        $(function () {
-            // Custom Javascript (onReady)
-        });
-    </script>
     <style type="text/css" media="screen">
 
     </style>
@@ -34,8 +20,8 @@
                 <center style="margin-inline: 20%;"><input class="si" type="search" name="search" placeholder="Search"
                         id="some_name" />
                 </center>
-                <a href="" class="button searchbtn">
-                    <img style="margin-top: 3;" src="img/icon-search.png" alt=""></a>
+                <a href="search.html" class="button searchbtn">
+                    <img alt="Search" style="margin-top: 3;" src="img/icon-search.png" alt=""></a>
                 <a class="button leftbutton" href="#">Menu</a>
                 <a class="button slideup" id="infoButton" href="login.html">Login</a>
             </div>
@@ -49,6 +35,22 @@
 
 
         </div>
+    
+    <script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jqt.js" type="text/javascript" charset="utf-8"></script>    
+<script type="text/javascript" charset="utf-8">
+       var jQT = new $.jQTouch({
+            icon: 'jqtouch.png',
+            addGlossToIcon: false,
+            startupScreen: 'jqt_startup.png',
+            statusBar: 'black'
+        });
+
+        $(function () {
+            // Custom Javascript (onReady)
+        });
+    </script>
+<script async src="js/browser.js"></script>
 </body>
 
 </html>
