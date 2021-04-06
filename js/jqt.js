@@ -26,7 +26,7 @@
 
     jQT.prototype.extensions = [];
 
-    jQT.prototype.animations = [
+/*     jQT.prototype.animations = [
       {
         name: "cubeleft",
         selector: ".cubeleft, .cube",
@@ -74,7 +74,7 @@
         name: "slideleft",
         selector: ".slideleft, .slide, #jqt > * > ul li a"
       }
-    ];
+    ]; */
 
     jQT.prototype.orientation = 'portrait';
 
@@ -82,7 +82,7 @@
 
     jQT.prototype.defaults = {
       addGlossToIcon: true,
-      backSelector: ".back, .cancel, .goback",
+      backSelector: ".back",
       cacheGetRequests: true,
       defaultAnimation: "slideleft",
       fixedViewport: true,
@@ -108,23 +108,23 @@
       return this.prototype.extensions.push(extension);
     };
 
-    jQT.addTapHandler = function(tapHandler) {
+   /* jQT.addTapHandler = function(tapHandler) {
       if (typeof tapHandler.name === "string" && typeof tapHandler.isSupported === "function" && typeof tapHandler.fn === "function") {
         return this.prototype.tapHandlers.push(tapHandler);
       }
     };
 
-    jQT.addAnimation = function(animation) {
+     jQT.addAnimation = function(animation) {
       if (typeof animation.selector === "string" && typeof animation.name === "string") {
         return this.animations.push(animation);
       }
-    };
+    }; */
 
     $body = void 0;
 
     $head = $("head");
 
-    animations = jQT.prototype.animations;
+  //  animations = jQT.prototype.animations;
 
     customHistory = [];
 
@@ -144,10 +144,10 @@
           isSupported: function(e, params) {
             return isExternalLink(params.$el);
           },
-          fn: function(e, params) {
+        /*  fn: function(e, params) {
             params.$el.removeClass('active');
             return true;
-          }
+          }*/
         }, {
           name: "back-selector",
           isSupported: (function(_this) {
@@ -197,7 +197,7 @@
           fn: (function(_this) {
             return function(e, params) {
               var animation;
-              animation = getAnimation(params.$el);
+             // animation = getAnimation(params.$el);
               params.$el.addClass("active");
               _this.goTo($(params.hash).data("referrer", params.$el), animation, params.$el.hasClass("reverse"));
               return false;
@@ -210,7 +210,7 @@
           },
           fn: function(e, params) {
             var animation;
-            animation = getAnimation(params.$el);
+            //animation = getAnimation(params.$el);
             params.$el.addClass("loading active");
             showPageByHref(params.$el.attr("href"), {
               animation: animation,
@@ -230,15 +230,15 @@
         return function(toPage, animation) {
           var anim, fromPage, nextPage, _i, _len;
           fromPage = customHistory[0].page;
-          if (typeof animation === "string") {
-            for (_i = 0, _len = animations.length; _i < _len; _i++) {
+/*           if (typeof animation === "string") {
+            for (_i = 0, _len = 0; _i < _len; _i++) {
               anim = animations[_i];
               if (anim.name === animation) {
                 animation = anim;
                 break;
               }
             }
-          }
+          } */
           if (typeof toPage === "string") {
             nextPage = $(toPage);
             if (!nextPage.length) {
@@ -255,7 +255,7 @@
           } else {
             console.warn("Could not animate pages.");
             return false;
-          }
+          } 
         };
       })(this);
       this.goBack = (function(_this) {
@@ -299,7 +299,7 @@
         };
       })(this);
       this.history = customHistory;
-      initHairExtensions = (function(_this) {
+     /*  initHairExtensions = (function(_this) {
         return function(options) {
           var hairExtensions, i, precomposed, viewports, _i, _len, _ref;
           _ref = _this.settings.preloadImages;
@@ -338,7 +338,7 @@
             return $head.prepend(hairExtensions.join(''));
           }
         };
-      })(this);
+      })(this);*/
       insertPages = (function(_this) {
         return function(nodes, animation) {
           var targetPage;
@@ -365,7 +365,7 @@
             return false;
           }
         };
-      })(this);
+      })(this); 
       addPageToHistory = function(page, animation) {
         var id;
         id = page.attr('id');
@@ -415,10 +415,10 @@
       isExternalLink = function($el) {
         return $el.attr("target") === "_blank" || $el.attr("rel") === "external" || $el.is("a[href^=\"http://maps.google.com\"], a[href^=\"mailto:\"], a[href^=\"tel:\"], a[href^=\"javascript:\"], a[href*=\"youtube.com/v\"], a[href*=\"youtube.com/watch\"]");
       };
-      getAnimation = (function(_this) {
+/*       getAnimation = (function(_this) {
         return function($el) {
           var animation, resultAnimation, _i, _len;
-          for (_i = 0, _len = animations.length; _i < _len; _i++) {
+          for (_i = 0, _len = 0; _i < _len; _i++) {
             animation = animations[_i];
             if ($el.is(animation.selector)) {
               resultAnimation = animation;
@@ -431,7 +431,7 @@
           }
           return resultAnimation;
         };
-      })(this);
+      })(this); */
       showPageByHref = (function(_this) {
         return function(href, options) {
           options = $.extend({}, {
@@ -475,7 +475,7 @@
           $.extend(support, {
             animationEvents: typeof window.WebKitAnimationEvent !== "undefined",
             touch: (typeof window.TouchEvent !== "undefined") && (window.navigator.userAgent.indexOf("Mobile") > -1) && _this.settings.useFastTouch,
-            transform3d: function() {
+/*             transform3d: function() {
               var body, div, head, result, style;
               head = $head.get(0);
               body = document.body;
@@ -490,14 +490,14 @@
               div.parentNode.removeChild(div);
               console.warn("Support for 3d transforms: " + result + ".");
               return result;
-            }
+            } */
           });
           if (!support.touch) {
             console.warn("This device does not support touch interaction, or it has been deactivated by the developer. Some features might be unavailable.");
           }
-          if (!support.transform3d) {
+/*           if (!support.transform3d) {
             console.warn("This device does not support 3d animation. 2d animations will be used instead.");
-          }
+          } */
           _ref = _this.extensions;
           for (_i = 0, _len = _ref.length; _i < _len; _i++) {
             extFn = _ref[_i];
@@ -545,7 +545,7 @@
           orientation: orientation
         });
       };
-      reverseAnimation = function(animation) {
+/*       reverseAnimation = function(animation) {
         var opposites;
         opposites = {
           up: "down",
@@ -556,7 +556,7 @@
           out: "in"
         };
         return opposites[animation] || animation;
-      };
+      }; */
       setHash = (function(_this) {
         return function(hash) {
           if (_this.settings.updateHash) {
@@ -651,7 +651,7 @@
             goingBack = false;
           }
           navigationEndHandler = function(event) {
-            if (support.animationEvents && animation && _this.settings.useAnimations) {
+/*            if (support.animationEvents && animation && _this.settings.useAnimations) {
               fromPage.off("webkitAnimationEnd", navigationEndHandler);
               fromPage.removeClass(finalAnimationName + " out");
               if (finalAnimationName) {
@@ -663,7 +663,7 @@
               if (finalAnimationName) {
                 toPage.removeClass(finalAnimationName);
               }
-            }
+            } */
             setTimeout(function() {
               toPage.removeClass('in');
               return window.scroll(0, 0);
@@ -678,7 +678,8 @@
               direction: "out",
               animation: animation,
               back: goingBack
-            });
+            }); 
+            console.warn('no animation');
           };
           if (!toPage.length) {
             $('.active').removeClass('active');
@@ -734,7 +735,7 @@
         };
       })(this);
       this.settings = $.extend({}, this.defaults, options);
-      initHairExtensions();
+     // initHairExtensions();
       this.settings.starter(start);
     }
 
