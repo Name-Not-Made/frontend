@@ -25,7 +25,7 @@ query ($id: Int, $page: Int, $perPage: Int) {
 
 var variables = {
     page: 1,
-    perPage: 3
+    perPage: 50
 };
 
 var url = 'https://graphql.anilist.co',
@@ -53,8 +53,9 @@ function handleResponse(response) {
 
 function handleData(data) {
     console.log(data);
-    for (i in data.data.Page.media) {
-        document.getElementsByClassName("individual")[0].innerHTML+="<li><a><img src='"+ data.data.Page.media[i].coverImage.medium +"'><p>"+data.data.Page.media[i].title.romaji + "</br>"+data.data.Page.media[i].chapters + "</p></a></li>"
+    var dataroot = data.data.Page.media
+    for (i in dataroot) {
+        document.getElementsByClassName("individual")[0].innerHTML+="<li><a><img alt='"+dataroot[i].title.romaji+"' src='"+ dataroot[i].coverImage.medium +"'><p><b>"+dataroot[i].title.romaji + "</b></br><small>"+dataroot[i].chapters +" Chapters </small></p></a></li>"
       } 
     
 }
