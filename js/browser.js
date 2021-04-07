@@ -14,7 +14,7 @@ query ($id: Int, $page: Int, $perPage: Int) {
           romaji
         }
         coverImage {
-          medium
+          large
         }
         chapters
       }
@@ -55,7 +55,7 @@ function handleData(data) {
     console.log(data);
     var dataroot = data.data.Page.media
     for (i in dataroot) {
-        document.getElementsByClassName("individual")[0].innerHTML+="<li><a><img alt='"+dataroot[i].title.romaji+"' src='"+ dataroot[i].coverImage.medium +"'><p><b>"+dataroot[i].title.romaji + "</b></br><small>"+dataroot[i].chapters +" Chapters </small></p></a></li>"
+        document.getElementsByClassName("individual")[0].innerHTML+="<li><a><img width=120 height=180 alt='"+dataroot[i].title.romaji+"' src='"+ dataroot[i].coverImage.large +"'><p><b>"+dataroot[i].title.romaji + "</b></br><small>"+dataroot[i].chapters +" Chapters </small></p></a></li>"
       } 
     
 }
