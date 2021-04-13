@@ -580,4 +580,5 @@ The following code has parts from jqt.js under the MIT license.
         }
         return jQT
     })();
+$.jQTouch=$.jQT
 }).call(this);
