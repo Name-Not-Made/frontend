@@ -1,7 +1,7 @@
 <div id="chapter">
   <div class="toolbar">
     <h1>Chapter name</h1>
-    <a class="back" href="#">Back</a><a class="button" href="javascript:void">Settings</a>
+    <a class="back" href="#">Back</a><a class="button" onclick='showMenu()' href="javascript:void">Settings</a>
   </div>
   <div class="scroll">
     <img src="img/photo_2021-03-17_16-48-47.jpg" class="page" alt="">
@@ -64,4 +64,12 @@
     }
     images[slideIndex - 1].style.display = "block";
   }
+    function showMenu() {
+        console.log('menu clicked')
+        if (document.getElementById("menu").style.display == "none") {
+            document.getElementById("menu").style.display = "block";
+        } else {
+            document.getElementById("menu").style.display = "none"
+        }
+    }
 </script>
