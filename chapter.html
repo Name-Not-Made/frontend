@@ -17,8 +17,8 @@
   </div>
         <ul id="menu"  style="margin: 45 0 0 0; height: 90%; color: #b4b4b4;position: absolute;top: 0;display: none;right: 0;width: 240px;">
             <li><label for="sb1">Page layout:</label><select class="s" name="sb" id="sb1">
-                    <option value="1">Single page</option>
-                    <option value="2">Double page</option>
+                    <option onclick='turnsinglepage()' value="1">Single page</option>
+                    <option onclick='turndoublepage()' value="2">Double page</option>
                     <option onclick="showDivsVertical()" value="3">Vertical</option>
                 </select></li>
             <li><label for="sb2">Navigation:</label><select class="s" name="sb" id="sb2">
@@ -49,8 +49,17 @@
 </style>
 
 <script>
+var isdoublepage=False;
   var images = document.getElementsByClassName("page");
   var slider = document.getElementById("zoomslider");
+var leftbutton = document.getElementById("priv-button");
+var rightbutton = document.getElementById("next-button");
+function turnsinglepage() {
+isdoublepage=False;
+leftbutton.setAttribute('onclick','plusDivs(-1)');
+rightbutton.setAttribute('onclick','plusDivs(1)');
+showDivs(slideIndex);
+}
   for (i = 0; i < images.length; i++) {
     images[i].style.width = slider.value * 2 + "%"; // Initial zoom
   }
@@ -63,14 +72,14 @@
 
   var slideIndex = 1;
   showDivs(slideIndex);
-
+function turndoublepage(){
+isdoublepage=True;
+leftbutton.setAttribute('onclick','plusDivs(-1)');
+rightbutton.setAttribute('onclick','plusDivs(1)');
+showDivs(slideIndex);
+}
   function plusDivs(n) {
-    showDivs(slideIndex += mmm
-  }
-function plusDivsdoublepage(n) {
-    showDivs(slideIndex += n);
-images[slideIndex].style.display = "inline-block";
- 
+    showDivs(slideIndex += n)
   }
 
   function showDivs(n) {
@@ -81,6 +90,9 @@ images[slideIndex].style.display = "inline-block";
       images[i].style.display = "none";
     }
     images[slideIndex - 1].style.display = "inline-block";
+If (isdoublepage) {
+images[slideIndex].style.display = "inline-block";
+}
   }
 
 function showDivsVertical() {
