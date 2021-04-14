@@ -19,7 +19,7 @@
             <li><label for="sb1">Page layout:</label><select class="s" name="sb" id="sb1">
                     <option value="1">Single page</option>
                     <option value="2">Double page</option>
-                    <option value="3">Vertical</option>
+                    <option onclick="showDivsVertical()" value="3">Vertical</option>
                 </select></li>
             <li><label for="sb2">Navigation:</label><select class="s" name="sb" id="sb2">
                     <option value="1">Left to right</option>
@@ -82,6 +82,12 @@ images[slideIndex].style.display = "inline-block";
     images[slideIndex - 1].style.display = "inline-block";
   }
 
+function showDivsVertical() {
+    var i;
+    for (i = 0; i < images.length; i++) {
+      images[i].style.display = "block";
+    }
+}
     function showMenu() {
         console.log('menu clicked')
         if (document.getElementById("menu").style.display == "none") {
