@@ -1,7 +1,7 @@
 <div id="chapter">
   <div class="toolbar">
     <h1>Chapter name</h1>
-    <a class="back" href="#">Back</a><a class="button" onclick='showMenu()' href="javascript:void">Settings</a>
+    <a class="back" href="#">Back</a><a class="button" onclick='showMenu("menu")' href="javascript:void">Settings</a>
   </div>
   <div class="scroll">
     <img src="img/1.png" class="page" alt=""><img src="img/2.png" class="page" alt=""><img src="img/3.png" class="page" alt="">
@@ -16,27 +16,43 @@
     
     <span id="zoom">Zoom: <input type="range" id="zoomslider"></span>
   </div>
-       <ul id="menu"  style="margin: 45 0 0 0; height: 90%; color: #b4b4b4;position: absolute;top: 0;display: none;right: 0;width: 240px;">
-            <li><a for="sb1">Page layout:</a>
-                    <a href="javascript:void" onclick='turnsinglepage()' value="1">Single page</a>
-                    <a href="javascript:void" onclick='turndoublepage()' value="2">Double page</a>
-                    <a href="javascript:void" onclick="showDivsVertical()" value="3">Vertical</a>
-                </li> <!--<li><label for="sb1">Page layout:</label><select class="s" name="sb" id="sb1"> <option onclick='turnsinglepage()' value="1">Single page</option> <option onclick='turndoublepage()' value="2">Double page</option> <option onclick="showDivsVertical()" value="3">Vertical</option> </select></li> -->
-            <li><a for="sb2">Navigation:</a>
-                    <a href="#" onclick="lefttoright()" value="1">Left to right</a>
-                    <a onclick="righttoleft" href="#" value="2">Right to left</a>
+         <ul id="menu"  style="margin: 42 0 0 0; height: 99%; color: #b4b4b4;position: absolute;top: 0;display: none;right: 0;width: 240px;background-color:rgba(21,21,21,.9)">
+            <div class="toolbar"><a for="sb1">Page layout:</a><a href="#" onclick="showMenu('pagelayout')" class="button" id="pagelayoutbtn">Single Page</a>
+                   
+                </div> <!--<li><label for="sb1">Page layout:</label><select class="s" name="sb" id="sb1"> <option onclick='turnsinglepage()' value="1">Single page</option> <option onclick='turndoublepage()' value="2">Double page</option> <option onclick="showDivsVertical()" value="3">Vertical</option> </select></li> -->
+            <div class="toolbar"> <a for="sb2">Navigation:</a>
+                <a href="#" onclick="showMenu('navlayout')" class="button" >Left to Right </a>
                
-                </li>
-            <li><a for="sb3">Background color</a>
-                    <a href="#" value="1">Black</a>
-                    <a href="#" value="2">White</a>
-                    
-                </select></li>
-<li>Full screen<span class="toggle"><input type="checkbox" /></span></li>
+                </div>
+            <div class="toolbar"> <a for="sb3">Background color</a>
+                  <a href="#" onclick="showMenu('bgcolorselector')" class="button" >White </a>  
+                </div>
+<li>Full screen<span onclick="toggleFullScreen()" class="toggle"><input type="checkbox" /></span></li>
            
         </ul>
+        <ul id="navlayout" class="dropdown" style="margin: 135 0 0 0;">
+        <li><a href="javascript:void" onclick="lefttoright()" value="1">Left to right</a>
+                    <a onclick="righttoleft()" href="javascript:void" value="2">Right to left</a></li></ul>
+        <ul id="pagelayout" style="margin: 90 0 0 0;" class="dropdown">
+  <li>
+   <a href="javascript:void" onclick='turnsinglepage()' value="1">Single page</a>
+                    <a href="javascript:void" onclick='turndoublepage()' value="2">Double page</a>
+                    <a href="javascript:void" onclick="showDivsVertical()" value="3">Vertical</a>
+                    </li>
+                    </ul>
+                    <ul id="bgcolorselector" style="margin: 180 0 0 0; " class="dropdown" > <li><a href="javascript:void" value="1">Black</a>
+                    <a href="javascript:void" value="2">White</a>
+                    </li></ul>
+
 </div>
 <style>
+#jqt #menu .toolbar {
+    background-color:rgba(25,25,25,.0);
+    
+}
+#chapter {
+    overflow:hidden;
+}
   #zoom {
     float: right;
     color: #b4b4b4;
@@ -47,6 +63,9 @@
       display: none;
     }
   }
+  .dropdown {
+      
+  color: #b4b4b4;position: absolute;top: 0;display: none;right: 0;width: 120px;z-index: 287;}
 </style>
 
 <script>
@@ -79,11 +98,13 @@ var rightbutton = document.getElementById("next-button");
   function righttoleft() {
       islefttoright=false;
   }
+  var pagelayoutbtn = document.getElementById("pagelayoutbtn");
 function turndoublepage() {
 isdoublepage=true;
 leftbutton.setAttribute('onclick','plusDivs(-1)');
 rightbutton.setAttribute('onclick','plusDivs(1)');
 showDivs(slideIndex);
+pagelayoutbtn.innerHTML=" Double Page"
 }
   function plusDivs(n) {
     if (!islefttoright) {
@@ -99,6 +120,7 @@ isdoublepage=false;
 leftbutton.setAttribute('onclick','plusDivs(-1)');
 rightbutton.setAttribute('onclick','plusDivs(1)');
 showDivs(slideIndex);
+pagelayoutbtn.innerHTML="Single Page"
 }
   function showDivs(n) {
     var i;
@@ -118,13 +140,14 @@ function showDivsVertical() {
     for (i = 0; i < images.length; i++) {
       images[i].style.display = "block";
     }
+    pagelayoutbtn.innerHTML="Vertical"
 }
-    function showMenu() {
+    function showMenu(menuid) {
         console.log('menu clicked')
-        if (document.getElementById("menu").style.display == "none") {
-            document.getElementById("menu").style.display = "block";
+        if (document.getElementById(menuid).style.display == "none") {
+            document.getElementById(menuid).style.display = "block";
         } else {
-            document.getElementById("menu").style.display = "none"
+            document.getElementById(menuid).style.display = "none"
         }
     }
     function toggleFullScreen() { 
