@@ -66,6 +66,11 @@
   function plusDivs(n) {
     showDivs(slideIndex += n);
   }
+function plusDivsdoublepage(n) {
+    showDivs(slideIndex += n);
+images[slideIndex].style.display = "inline-block";
+ 
+  }
 
   function showDivs(n) {
     var i;
@@ -74,8 +79,9 @@
     for (i = 0; i < images.length; i++) {
       images[i].style.display = "none";
     }
-    images[slideIndex - 1].style.display = "block";
+    images[slideIndex - 1].style.display = "inline-block";
   }
+
     function showMenu() {
         console.log('menu clicked')
         if (document.getElementById("menu").style.display == "none") {
