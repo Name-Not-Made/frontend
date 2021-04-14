@@ -4,33 +4,34 @@
     <a class="back" href="#">Back</a><a class="button" onclick='showMenu()' href="javascript:void">Settings</a>
   </div>
   <div class="scroll">
-    <img src="img/photo_2021-03-17_16-48-47.jpg" class="page" alt="">
+    <img src="img/1.png" class="page" alt=""><img src="img/2.png" class="page" alt=""><img src="img/3.png" class="page" alt="">
   </div>
   <div style='top: auto;bottom: 0px;background-color: #1a1a1a61;' class="toolbar">
-   <h1>nnn/mmm</h1>
-      <a onclick="plusDivs(-1)" id='prev-button' class="button leftbutton" href="javascript:void">&#10094;</a>
-    <a style="left: 48;right: auto;" id='next-button' class="button" onclick="plusDivs(1)" href="javascript:void">&#10095;</a>
+   <h1><span id="currentpage">nn</span> /<span id="allpage">nn</span></h1>
+      <a onclick="plusDivs(-1)" id="prev-button" class="button leftbutton" href="javascript:void">&#10094;</a>
+    <a style="left: 48;right: auto;" id="next-button" class="button" onclick="plusDivs(1)" href="javascript:void">&#10095;</a>
+    <a href="javascript:void" onclick="toggleFullScreen()" class="button" > fullscreen </a>
 
     
     
     <span id="zoom">Zoom: <input type="range" id="zoomslider"></span>
   </div>
-        <ul id="menu"  style="margin: 45 0 0 0; height: 90%; color: #b4b4b4;position: absolute;top: 0;display: none;right: 0;width: 240px;">
-            <li><label for="sb1">Page layout:</label><select class="s" name="sb" id="sb1">
-                    <option onclick='turnsinglepage()' value="1">Single page</option>
-                    <option onclick='turndoublepage()' value="2">Double page</option>
-                    <option onclick="showDivsVertical()" value="3">Vertical</option>
-                </select></li>
+       <ul id="menu"  style="margin: 45 0 0 0; height: 90%; color: #b4b4b4;position: absolute;top: 0;display: none;right: 0;width: 240px;">
+       <!--     <li><label for="sb1">Page layout:</label>
+                    <a href="javascript:void" onclick='turnsinglepage()' value="1">Single page</a>
+                    <a href="javascript:void" onclick='turndoublepage()' value="2">Double page</a>
+                    <a href="javascript:void" onclick="showDivsVertical()" value="3">Vertical</a>
+                </li> --> <li><label for="sb1">Page layout:</label><select class="s" name="sb" id="sb1"> <option onclick='turnsinglepage()' value="1">Single page</option> <option onclick='turndoublepage()' value="2">Double page</option> <option onclick="showDivsVertical()" value="3">Vertical</option> </select></li>
             <li><label for="sb2">Navigation:</label><select class="s" name="sb" id="sb2">
                     <option value="1">Left to right</option>
                     <option value="2">Right to left</option>
                
                 </select></li>
-            <li><a href=""><label for="sb3">Background color</label><select class="s" name="sb" id="sb3">
+            <li><label for="sb3">Background color</label><select class="s" name="sb" id="sb3">
                     <option value="1">Black</option>
                     <option value="2">White</option>
                     
-                </select></a></li>
+                </select></li>
 <li>Full screen<span class="toggle"><input type="checkbox" /></span></li>
            
         </ul>
@@ -49,17 +50,14 @@
 </style>
 
 <script>
-var isdoublepage=False;
+var isdoublepage=false;
+var currentpage = document.getElementById("currentpage") 
+var allpage = document.getElementById("allpage");
   var images = document.getElementsByClassName("page");
   var slider = document.getElementById("zoomslider");
-var leftbutton = document.getElementById("priv-button");
+var leftbutton = document.getElementById("prev-button");
 var rightbutton = document.getElementById("next-button");
-function turnsinglepage() {
-isdoublepage=False;
-leftbutton.setAttribute('onclick','plusDivs(-1)');
-rightbutton.setAttribute('onclick','plusDivs(1)');
-showDivs(slideIndex);
-}
+
   for (i = 0; i < images.length; i++) {
     images[i].style.width = slider.value * 2 + "%"; // Initial zoom
   }
@@ -72,16 +70,25 @@ showDivs(slideIndex);
 
   var slideIndex = 1;
   showDivs(slideIndex);
-function turndoublepage(){
-isdoublepage=True;
+  currentpage.innerHTML = slideIndex;
+  allpage.innerHTML=images.length;
+  
+function turndoublepage() {
+isdoublepage=true;
 leftbutton.setAttribute('onclick','plusDivs(-1)');
 rightbutton.setAttribute('onclick','plusDivs(1)');
 showDivs(slideIndex);
 }
   function plusDivs(n) {
     showDivs(slideIndex += n)
+    currentpage.innerHTML = slideIndex;
   }
-
+function turnsinglepage() {
+isdoublepage=false;
+leftbutton.setAttribute('onclick','plusDivs(-1)');
+rightbutton.setAttribute('onclick','plusDivs(1)');
+showDivs(slideIndex);
+}
   function showDivs(n) {
     var i;
     if (n > images.length) { slideIndex = 1 }
@@ -90,7 +97,7 @@ showDivs(slideIndex);
       images[i].style.display = "none";
     }
     images[slideIndex - 1].style.display = "inline-block";
-If (isdoublepage) {
+if (isdoublepage) {
 images[slideIndex].style.display = "inline-block";
 }
   }
@@ -109,4 +116,7 @@ function showDivsVertical() {
             document.getElementById("menu").style.display = "none"
         }
     }
+    function toggleFullScreen() { 
+    document.fullscreenEnabled=true
+    if (!document.fullscreenElement) { document.getElementById("chapter").requestFullscreen(); } else { if (document.exitFullscreen) { document.exitFullscreen(); } } }
 </script>
