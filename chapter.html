@@ -17,22 +17,22 @@
     <span id="zoom">Zoom: <input type="range" id="zoomslider"></span>
   </div>
        <ul id="menu"  style="margin: 45 0 0 0; height: 90%; color: #b4b4b4;position: absolute;top: 0;display: none;right: 0;width: 240px;">
-       <!--     <li><label for="sb1">Page layout:</label>
+            <li><a for="sb1">Page layout:</a>
                     <a href="javascript:void" onclick='turnsinglepage()' value="1">Single page</a>
                     <a href="javascript:void" onclick='turndoublepage()' value="2">Double page</a>
                     <a href="javascript:void" onclick="showDivsVertical()" value="3">Vertical</a>
-                </li> --> <li><label for="sb1">Page layout:</label><select class="s" name="sb" id="sb1"> <option onclick='turnsinglepage()' value="1">Single page</option> <option onclick='turndoublepage()' value="2">Double page</option> <option onclick="showDivsVertical()" value="3">Vertical</option> </select></li>
-            <li><label for="sb2">Navigation:</label><select class="s" name="sb" id="sb2">
-                    <option value="1">Left to right</option>
-                    <option value="2">Right to left</option>
+                </li> <!--<li><label for="sb1">Page layout:</label><select class="s" name="sb" id="sb1"> <option onclick='turnsinglepage()' value="1">Single page</option> <option onclick='turndoublepage()' value="2">Double page</option> <option onclick="showDivsVertical()" value="3">Vertical</option> </select></li> -->
+            <li><a for="sb2">Navigation:</a>
+                    <a href="#" onclick="lefttoright()" value="1">Left to right</a>
+                    <a onclick="righttoleft" href="#" value="2">Right to left</a>
                
-                </select></li>
-            <li><label for="sb3">Background color</label><select class="s" name="sb" id="sb3">
-                    <option value="1">Black</option>
-                    <option value="2">White</option>
+                </li>
+            <li><a for="sb3">Background color</a>
+                    <a href="#" value="1">Black</a>
+                    <a href="#" value="2">White</a>
                     
                 </select></li>
-<li>FS <full screen icon><span class="toggle"><input type="checkbox" /></span></li>
+<li>Full screen<span class="toggle"><input type="checkbox" /></span></li>
            
         </ul>
 </div>
@@ -40,7 +40,6 @@
   #zoom {
     float: right;
     color: #b4b4b4;
-margin-right: 50px;
   }
 
   @media (max-width: 600px) {
@@ -51,6 +50,7 @@ margin-right: 50px;
 </style>
 
 <script>
+var islefttoright=false;
 var isdoublepage=false;
 var currentpage = document.getElementById("currentpage") 
 var allpage = document.getElementById("allpage");
@@ -73,7 +73,12 @@ var rightbutton = document.getElementById("next-button");
   showDivs(slideIndex);
   currentpage.innerHTML = slideIndex;
   allpage.innerHTML=images.length;
-  
+  function lefttoright() {
+      islefttoright=true;
+  }
+  function righttoleft() {
+      islefttoright=false;
+  }
 function turndoublepage() {
 isdoublepage=true;
 leftbutton.setAttribute('onclick','plusDivs(-1)');
@@ -81,7 +86,12 @@ rightbutton.setAttribute('onclick','plusDivs(1)');
 showDivs(slideIndex);
 }
   function plusDivs(n) {
-    showDivs(slideIndex += n)
+    if (!islefttoright) {
+        showDivs(slideIndex += n*-1)
+    } else {
+       showDivs(slideIndex += n) 
+    }
+    
     currentpage.innerHTML = slideIndex;
   }
 function turnsinglepage() {
