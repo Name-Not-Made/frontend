@@ -8,8 +8,8 @@
   </div>
   <div style='top: auto;bottom: 0px;background-color: #1a1a1a61;' class="toolbar">
    <h1>nnn/mmm</h1>
-      <a onclick="plusDivs(-1)" class="button leftbutton" href="javascript:void">&#10094;</a>
-    <a style="left: 48;right: auto;" class="button" onclick="plusDivs(1)" href="javascript:void">&#10095;</a>
+      <a onclick="plusDivs(-1)" id='prev-button' class="button leftbutton" href="javascript:void">&#10094;</a>
+    <a style="left: 48;right: auto;" id='next-button' class="button" onclick="plusDivs(1)" href="javascript:void">&#10095;</a>
 
     
     
@@ -31,7 +31,8 @@
                     <option value="2">White</option>
                     
                 </select></a></li>
-<li><a href="">Full screen</a></li>
+<li>Full screen<span class="toggle"><input type="checkbox" /></span></li>
+           
         </ul>
 </div>
 <style>
@@ -64,7 +65,7 @@
   showDivs(slideIndex);
 
   function plusDivs(n) {
-    showDivs(slideIndex += n);
+    showDivs(slideIndex += mmm
   }
 function plusDivsdoublepage(n) {
     showDivs(slideIndex += n);
