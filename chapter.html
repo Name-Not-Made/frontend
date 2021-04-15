@@ -3,10 +3,10 @@
     <h1>Chapter name</h1>
     <a class="back" href="#">Back</a><a class="button" onclick='showMenu("menu")' href="javascript:void">Settings</a>
   </div>
-  <div class="scroll">
+  <div id="mangabg" class="scroll">
     <img src="img/1.png" class="page" alt=""><img src="img/2.png" class="page" alt=""><img src="img/3.png" class="page" alt="">
   </div>
-  <div style='top: auto;bottom: 0px;background-color: #1a1a1a61;' class="toolbar">
+  <div style='top: auto;bottom: 0px;background-color: #1a1a1a;' class="toolbar">
    <h1><span id="currentpage">nn</span> /<span id="allpage">nn</span></h1>
       <a onclick="plusDivs(-1)" id="prev-button" class="button leftbutton" href="javascript:void">&#10094;</a>
     <a style="left: 48;right: auto;" id="next-button" class="button" onclick="plusDivs(1)" href="javascript:void">&#10095;</a>
@@ -30,18 +30,18 @@
 <li>Full screen<span onclick="toggleFullScreen()" class="toggle"><input type="checkbox" /></span></li>
            
         </ul>
-        <ul id="navlayout" class="dropdown" style="margin: 135 0 0 0;">
+        <ul id="navlayout" class="dropdown" style="margin: 125 10 0 0;">
         <li><a href="javascript:void" onclick="lefttoright()" value="1">Left to right</a>
                     <a onclick="righttoleft()" href="javascript:void" value="2">Right to left</a></li></ul>
-        <ul id="pagelayout" style="margin: 90 0 0 0;" class="dropdown">
+        <ul id="pagelayout" style="margin: 81 10 0 0;" class="dropdown">
   <li>
    <a href="javascript:void" onclick='turnsinglepage()' value="1">Single page</a>
                     <a href="javascript:void" onclick='turndoublepage()' value="2">Double page</a>
                     <a href="javascript:void" onclick="showDivsVertical()" value="3">Vertical</a>
                     </li>
                     </ul>
-                    <ul id="bgcolorselector" style="margin: 180 0 0 0; " class="dropdown" > <li><a href="javascript:void" value="1">Black</a>
-                    <a href="javascript:void" value="2">White</a>
+                    <ul id="bgcolorselector" style="margin: 169 10 0 0; " class="dropdown" > <li><a href="javascript:void" onclick="setbgblack()" value="1">Black</a>
+                    <a onclick="setbgwhite()" href="javascript:void" value="2">White</a>
                     </li></ul>
 
 </div>
@@ -55,6 +55,7 @@
 }
   #zoom {
     float: right;
+    margin-right: 48px;
     color: #b4b4b4;
   }
 
@@ -94,9 +95,11 @@ var rightbutton = document.getElementById("next-button");
   allpage.innerHTML=images.length;
   function lefttoright() {
       islefttoright=true;
+      hidemenus();
   }
   function righttoleft() {
       islefttoright=false;
+      hidemenus();
   }
   var pagelayoutbtn = document.getElementById("pagelayoutbtn");
 function turndoublepage() {
@@ -104,7 +107,8 @@ isdoublepage=true;
 leftbutton.setAttribute('onclick','plusDivs(-1)');
 rightbutton.setAttribute('onclick','plusDivs(1)');
 showDivs(slideIndex);
-pagelayoutbtn.innerHTML=" Double Page"
+pagelayoutbtn.innerHTML=" Double Page";
+showMenu("pagelayout");
 }
   function plusDivs(n) {
     if (!islefttoright) {
@@ -120,7 +124,8 @@ isdoublepage=false;
 leftbutton.setAttribute('onclick','plusDivs(-1)');
 rightbutton.setAttribute('onclick','plusDivs(1)');
 showDivs(slideIndex);
-pagelayoutbtn.innerHTML="Single Page"
+pagelayoutbtn.innerHTML="Single Page";
+showMenu("pagelayout");
 }
   function showDivs(n) {
     var i;
@@ -140,15 +145,31 @@ function showDivsVertical() {
     for (i = 0; i < images.length; i++) {
       images[i].style.display = "block";
     }
-    pagelayoutbtn.innerHTML="Vertical"
+    pagelayoutbtn.innerHTML="Vertical";
+    showMenu("pagelayout");
 }
     function showMenu(menuid) {
+       var initialdisplay = document.getElementById(menuid).style.display; 
+      hidemenus(); document.getElementById(menuid).style.display=initialdisplay;
         console.log('menu clicked')
         if (document.getElementById(menuid).style.display == "none") {
             document.getElementById(menuid).style.display = "block";
         } else {
             document.getElementById(menuid).style.display = "none"
         }
+    }
+    function hidemenus() {
+        document.getElementById("pagelayout").style.display="none";
+      document.getElementById("navlayout").style.display="none";
+       document.getElementById("bgcolorselector").style.display="none";
+    }
+    function setbgblack() {
+        document.getElementById("mangabg").style.background-color="#151515";
+        hidemenus();
+    }
+    function setbgwhite() {
+        document.getElementById("mangabg").style.background-color="#ffffff";
+hidemenus();
     }
     function toggleFullScreen() { 
     document.fullscreenEnabled=true
