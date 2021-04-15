@@ -8,9 +8,10 @@
   </div>
   <div style='top: auto;bottom: 0px;background-color: #1a1a1a;' class="toolbar">
    <h1><span id="currentpage">nn</span> /<span id="allpage">nn</span></h1>
-      <a onclick="plusDivs(-1)" id="prev-button" class="button leftbutton" href="javascript:void">&#10094;</a>
-    <a style="left: 48;right: auto;" id="next-button" class="button" onclick="plusDivs(1)" href="javascript:void">&#10095;</a>
-    <a href="javascript:void" onclick="toggleFullScreen()" class="button" > fullscreen </a>
+        <a onclick="showDivs(images.length-1)" class="button leftbutton" href="javascript:void">&#10094;&#10094;</a>
+    <a style="left: 118;right: auto;" class="button" onclick="showDivs(0)" href="javascript:void">&#10095;&#10095;</a><a onclick="plusDivs(-1)" id="prev-button" class="button leftbutton" style="left: 48; right:auto;" href="javascript:void">&#10094;</a>
+    <a style="left: 85;right: auto;" id="next-button" class="button" onclick="plusDivs(1)" href="javascript:void">&#10095;</a>
+    <a href="javascript:void" onclick="toggleFullScreen()" class="button" >  &#x26F6; </a>
 
     
     
@@ -117,7 +118,7 @@ showMenu("pagelayout");
        showDivs(slideIndex += n) 
     }
     
-    currentpage.innerHTML = slideIndex;
+    
   }
 function turnsinglepage() {
 isdoublepage=false;
@@ -135,9 +136,11 @@ showMenu("pagelayout");
       images[i].style.display = "none";
     }
     images[slideIndex - 1].style.display = "inline-block";
+    
 if (isdoublepage) {
 images[slideIndex].style.display = "inline-block";
 }
+currentpage.innerHTML = slideIndex;
   }
 
 function showDivsVertical() {
@@ -164,11 +167,11 @@ function showDivsVertical() {
        document.getElementById("bgcolorselector").style.display="none";
     }
     function setbgblack() {
-        document.getElementById("mangabg").style.background-color="#151515";
+   document.getElementById("mangabg").style.backgroundColor="#151515";
         hidemenus();
     }
     function setbgwhite() {
-        document.getElementById("mangabg").style.background-color="#ffffff";
+        document.getElementById("mangabg").style.backgroundColor="#ffffff";
 hidemenus();
     }
     function toggleFullScreen() { 
