@@ -215,6 +215,8 @@
     hidemenus();
   }
   function toggleFullScreen() {
+document.getElementById("menu").style.display="none";
+	  hidemenus();
     showMenu("topbar");
     showMenu("bottombar");
     document.fullscreenEnabled = true
