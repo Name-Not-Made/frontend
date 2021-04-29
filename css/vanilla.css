@@ -225,6 +225,8 @@ body {
   background: none;
   clear: both;
   overflow: hidden;
+  margin: 0px;
+  padding: 0px;
 }
 
 #jqt ul.individual li {
@@ -232,11 +234,11 @@ body {
   text-align: center;
   border-radius: 2px;
   box-sizing: border-box;
-  width: 140px;
-  height: 220px;
+  width: 150px;
+  height: 230px;
   padding: 0;
   display: inline-block;
-  margin: 7px ;
+  margin: 4px ;
 }
 
 #jqt ul.individual a {
