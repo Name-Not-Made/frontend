@@ -1,43 +1,50 @@
-<div id="user">
+<div id="userid">
     <div class="toolbar">
         <h1>Username</h1>
         <a class="back" href="#">Back</a>
-        <a class="button" href="#wrmsg">Message</a>
-    </div>
+	<a class="button" href="#wrmsg">Message</a>
 
-    <div class="scroll">
-       
-	    <center>
-            <ul class="ut">
-                <li><span class="ppic2"> </span>
-			<a style="padding: 5px; height: 15;margin-top: 0; bottom: 25px;" class="button">Follow </a>
-                    <h1 class="h">Username</h1><span class="badge2">badge</span>
-		    <hr class="l2"></li>
-		<li>  <p class="r2">
-                        Qui laboriosam quam quis sint occaecati sed nostrum ullam. Sunt placeat provident est
-                        praesentium
-                        debitis accusamus doloremque. A corrupti quis accusantium delectus. Qui expedita ut id omnis.
-                        Consequatur voluptas optio velit omnis quis cum architecto.</p>
-                </li>
-            </ul>
-            <ul class="ut">
-                <li>Joined n days ago
+    </div>
+    <div class="info">
+        <div><img style="float: left;max-width: 240px;" width="30%" 
+                src=''></div>
+	<div style="min-width: 240px;margin-top: 10%;"><center>
+            <h1>username</h1>
+	    <span class="badge2">badge</span></center><a style="bottom:auto;top:100;right:15;left:auto;" class=" button">Follow</a>
+	    <hr>
+            <p style="margin: 10px;color: #b4b4b4;">Blitz frontend is manga reader for blitzreader. This repository deals with frontend system for blitz providing users with an in browser UI to interact with blitz reader.
+
+It is written in HTML, CSS and JavaScript and going to use tera soon.</p>
+
+            <ul id="mangainfo" style="margin-left: 40%;">
+		    <li>Joined n days ago
                 </li>
                 <li style="overflow-x: scroll; white-space: nowrap;">in group#1, group#2A corrupti quis accusantium
                     delectus. Qui expedita ut id omnis.
                     Consequatur voluptas optio velit omnis quis cum architecto </li>
                 <li>n Followers</li>
                 <li>n Views</li>
-            </ul>
-	    </center>
+                </ul>
+            <h1 style="float:right; position: relative; margin-bottom: 0px;"> 10 chapters</h1>
+        </div>
+      <style>#jqt #mangainfo li {
+padding: 2px;}
+      #jqt .chapterlist li a div {display:inline;} .chapterinfo {margin-right:30%;float:right;font-size:.75em;}#jqt ul li .button {height:20px;padding:2 5 10 5;top:5px;}
+.badge2 {
+        border: 1px solid #b4b4b4;
+        padding: 3px;
+        margin: 15 15 15 20;
+        color: #b4b4b4;
+    }
+      </style>
 
-    <h1>Uploaded 10 Chapters </h1>
-    <ul>
+    </div>  <ul class="chapterlist" style="margin-top:0;"><li><a href=""></a></li>
+	    <li><a href="chapter.html"><div class="chapterno">Chapter 1</div>
+			    <div class="chapterinfo"><img src="img/1.png" width=10 height=10 > uploaded by nm <br> 23 hours ago</div> </a>
+	<a class="button">Comments</a></li>
         <li><a href=""></a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-    </ul></div>
+        <li><a href=""></a></li></ul>
+
 </div>
 <div id="wrmsg">
     <div class="toolbar">
@@ -53,58 +60,3 @@
 
     </div>
 </div>
-<style>
-    .ppic2 {
-        margin-top: 10px;
-        width: 150px;
-        height: 150px;
-        background-color: #b4b4b4;
-        border-radius: 75px;
-        display: block;
-    }
-
-    .badge2 {
-        border: 1px solid #b4b4b4;
-        padding: 3px;
-        margin: 15px;
-        color: #b4b4b4;
-    }
-
-    #jqt .h {
-
-        display: block;
-    }
-
-    .l2 {
-        margin: 10;
-    }
-
-    .r2 {
-        margin: 15;
-        color: #b4b4b4;
-    }
-
-    /* #jqt .ut {
-        float: left;
-        width: 60%;
-        margin-right: 2;
-    }
-     */
-    #jqt .ut+.ut {
-        width: auto;
-        min-width: 200px;
-        margin-left: 0;
-        height: 240px;
-    }
-
-    .contain {
-        display: flex;
-        flex-direction: row;
-    }
-
-    @media (max-width:540px) {
-        .contain {
-            flex-direction: column;
-        }
-    }
-</style>
