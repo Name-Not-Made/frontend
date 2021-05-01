@@ -7,15 +7,54 @@
         <a class="button slideup" id="infoButton" href="javascript:void">Sign out</a>
     </div>    <div class="scroll">
     </div>
-        <ul id="menu"  style="margin: 45 0 0 0; height: 90%; color: #b4b4b4;position: absolute;top: 0;display: none;left: 0;width: 240px;">
-            <li><a href="">Dashboard</a></li>
-            <li><a href="">Upload</a></li>
+        
+</div>
+<div id="upload">
+    <div class="toolbar">
+        <center style="margin-inline: 20%;">
+            <h1>Upload</h1>
+        </center>
+        <a class="button leftbutton" href="javascript:void" onmousedown="showMenu()">Menu</a>
+        <a class="button slideup" id="infoButton" href="javascript:void">Sign out</a>
+    </div>    <div class="scroll">
+
+<input type="file" 
+    class="filepond"
+    name="filepond" 
+    multiple 
+    data-allow-reorder="true"
+    data-max-file-size="3MB"
+    data-max-files="3">
+
+<script>
+// We want to preview images, so we register
+// the Image Preview plugin, We also register 
+// exif orientation (to correct mobile image
+// orientation) and size validation, to prevent
+// large files from being added
+FilePond.registerPlugin(
+  FilePondPluginImagePreview,
+  FilePondPluginImageExifOrientation,
+  FilePondPluginFileValidateSize,
+  FilePondPluginImageEdit
+);
+
+// Select the file input and use 
+// create() to turn it into a pond
+FilePond.create(
+  document.querySelector('input')
+);
+</script>
+    </div>
+        
+</div>
+<ul id="menu"  style="margin: 45 0 0 0; height: i0%; color: #b4b4b4;position: absolute;top: 0;display: none;left: 0;z-index:65;width: 240px;">
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#upload">Upload</a></li>
             <li><a href="">Comments</a></li>
             <li><a href="">Messages</a></li>
             <li><a href="">Analytics</a></li>
         </ul>
-</div>
-
 <script>
     function showMenu() {
         console.log('menu clicked')
