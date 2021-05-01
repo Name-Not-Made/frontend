@@ -16,15 +16,24 @@
         </center>
         <a class="button leftbutton" href="javascript:void" onmousedown="showMenu()">Menu</a>
         <a class="button slideup" id="infoButton" href="javascript:void">Sign out</a>
-    </div>    <div class="scroll">
-
-<input type="file" 
+    </div>    
+    <form class="scroll"><ul class="edit ">
+            <li>Manga Name: <input disabled type="text" name="name" placeholder="Naruto" /></li>
+            <li>Chapter No: <input type="text" name="chno" placeholder="Chapter No" /></li>
+<li>Chapter Name: <input type="text" name="chname" placeholder="Chapter Name" /></li>
+<li><input type="file" 
     class="filepond"
     name="filepond" 
     multiple 
     data-allow-reorder="true"
     data-max-file-size="3MB"
     data-max-files="3">
+</li>
+            <li><a class="button " href="javascript:void" style="position: static;text-align: center;">Submit</a>
+            </li>
+             </ul>
+        
+    </form>
 
 <script>
 // We want to preview images, so we register
