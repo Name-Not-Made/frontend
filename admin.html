@@ -1,120 +1,144 @@
 <div id="profile">
-    <div class="toolbar">
-        <center style="margin-inline: 20%;">
-            <h1>Profile</h1>
-        </center>
-        <a class="button leftbutton" href="javascript:void" onmousedown="showMenu()">Menu</a>
-        <a class="button slideup" id="infoButton" href="javascript:void">Sign out</a>
-    </div>    <form class="scroll">
-<ul class=edit>
-<li>
-<input type="file" 
-    class="filepond"
-    name="filepond"
-    accept="image/png, image/jpeg, image/gif"/> </li>
-<li>Username: <input disabled type="text" name="name" placeholder="Naruto" /></li>
-<li>Email: <input type="text" name="chname" placeholder="Chapter Name" /></li>
+  <div class="toolbar">
+    <center style="margin-inline: 20%;">
+      <h1>Profile</h1>
+    </center>
+    <a class="button leftbutton" href="javascript:void" onmousedown="showMenu()">Menu</a>
+    <a class="button slideup" id="infoButton" href="javascript:void">Sign out</a>
+  </div>
+  <form class="scroll">
+    <ul class=edit>
+      <li>
+        <input type="file"
+        class="filepond"
+        name="filepond"
+        accept="image/png, image/jpeg, image/gif" /> </li>
+      <li>Username: <input disabled type="text" name="name" placeholder="Naruto" /></li>
+      <li>Email: <input type="text" name="chname" placeholder="Chapter Name" /></li>
 
-<script>
-// We register the plugins required to do 
-// image previews, cropping, resizing, etc.
-FilePond.registerPlugin(
-  FilePondPluginFileValidateType,
-  FilePondPluginImageExifOrientation,
-  FilePondPluginImagePreview,
-  FilePondPluginImageCrop,
-  FilePondPluginImageResize,
-  FilePondPluginImageTransform,
-  FilePondPluginImageEdit
-);
+      <script>
+        // We register the plugins required to do
+        // image previews, cropping, resizing, etc.
+        FilePond.registerPlugin(
+          FilePondPluginFileValidateType,
+          FilePondPluginImageExifOrientation,
+          FilePondPluginImagePreview,
+          FilePondPluginImageCrop,
+          FilePondPluginImageResize,
+          FilePondPluginImageTransform,
+          FilePondPluginImageEdit
+        );
 
-// Select the file input and use 
-// create() to turn it into a pond
-FilePond.create(
-  document.querySelector('input'),
-  {
-    labelIdle: `Drag & Drop your picture or <span class="filepond--label-action">Browse</span>`,
-    imagePreviewHeight: 170,
-    imageCropAspectRatio: '1:1',
-    imageResizeTargetWidth: 200,
-    imageResizeTargetHeight: 200,
-    stylePanelLayout: 'compact circle',
-    styleLoadIndicatorPosition: 'center bottom',
-    styleProgressIndicatorPosition: 'right bottom',
-    styleButtonRemoveItemPosition: 'left bottom',
-    styleButtonProcessItemPosition: 'right bottom',
-  }
-);
-</script>
-<li><a class="button " href="javascript:void" style="position: static;text-align: center;">Submit</a>
-            </li>
-             </ul>
-    </form>
-        
+        // Select the file input and use
+        // create() to turn it into a pond
+        FilePond.create(
+          document.querySelector('input'),
+          {
+            labelIdle: `Drag & Drop your picture or <span class="filepond--label-action">Browse</span>`,
+            imagePreviewHeight: 170,
+            imageCropAspectRatio: '1:1',
+            imageResizeTargetWidth: 200,
+            imageResizeTargetHeight: 200,
+            stylePanelLayout: 'compact circle',
+            styleLoadIndicatorPosition: 'center bottom',
+            styleProgressIndicatorPosition: 'right bottom',
+            styleButtonRemoveItemPosition: 'left bottom',
+            styleButtonProcessItemPosition: 'right bottom',
+          }
+        );
+      </script>
+      <li><a class="button " href="javascript:void" style="position: static;text-align: center;">Submit</a>
+      </li>
+    </ul>
+  </form>
+
 </div>
 <div id="upload">
-    <div class="toolbar">
-        <center style="margin-inline: 20%;">
-            <h1>Upload</h1>
-        </center>
-        <a class="button leftbutton" href="javascript:void" onmousedown="showMenu()">Menu</a>
-        <a class="button slideup" id="infoButton" href="javascript:void">Sign out</a>
-    </div>    
-    <form class="scroll"><ul class="edit ">
-            <li>Manga Name: <input disabled type="text" name="name" placeholder="Naruto" /></li>
-            <li>Chapter No: <input type="text" name="chno" placeholder="Chapter No" /></li>
-<li>Chapter Name: <input type="text" name="chname" placeholder="Chapter Name" /></li>
-<li><input type="file" 
-    class="filepond"
-    name="filepond" 
-    multiple 
-    data-allow-reorder="true"
-    data-max-file-size="3MB"
-    data-max-files="512"
-accept="image/png, image/jpeg, image/gif">
-</li>
-            <li><a class="button " href="javascript:void" style="position: static;text-align: center;">Submit</a>
-            </li>
-             </ul>
-        
-    </form>
+  <div class="toolbar">
+    <center style="margin-inline: 20%;">
+      <h1>Upload</h1>
+    </center>
+    <a class="button leftbutton" href="javascript:void" onmousedown="showMenu()">Menu</a>
+    <a class="button slideup" id="infoButton" href="javascript:void">Sign out</a>
+  </div>
+  <form class="scroll">
+    <ul class="edit ">
+      <li>Manga Name: <input disabled type="text" name="name" placeholder="Naruto" /></li>
+      <li>Chapter No: <input type="text" name="chno" placeholder="Chapter No" /></li>
+      <li>Chapter Name: <input type="text" name="chname" placeholder="Chapter Name" /></li>
+      <li><input type="file"
+        class="filepond"
+        name="filepond"
+        multiple
+        data-allow-reorder="true"
+        data-max-file-size="3MB"
+        data-max-files="512"
+        accept="image/png, image/jpeg, image/gif">
+      </li>
+      <li><a class="button " href="javascript:void" style="position: static;text-align: center;">Submit</a>
+      </li>
+    </ul>
 
-<script>
-// We want to preview images, so we register
-// the Image Preview plugin, We also register 
-// exif orientation (to correct mobile image
-// orientation) and size validation, to prevent
-// large files from being added
-FilePond.registerPlugin(
-  FilePondPluginImagePreview,
-  FilePondPluginImageExifOrientation,
-  FilePondPluginFileValidateSize,
-  FilePondPluginImageEdit
-);
+  </form>
 
-// Select the file input and use 
-// create() to turn it into a pond
-FilePond.create(
-  document.querySelector('input')
-);
-</script>
-    </div>
-        
+  <script>
+    // We want to preview images, so we register
+    // the Image Preview plugin, We also register
+    // exif orientation (to correct mobile image
+    // orientation) and size validation, to prevent
+    // large files from being added
+    FilePond.registerPlugin(
+      FilePondPluginImagePreview,
+      FilePondPluginImageExifOrientation,
+      FilePondPluginFileValidateSize,
+      FilePondPluginImageEdit
+    );
+
+    // Select the file input and use
+    // create() to turn it into a pond
+    FilePond.create(
+      document.querySelector('input')
+    );
+  </script>
 </div>
-<ul id="menu"  style="margin: 45 0 0 0; height: i0%; color: #b4b4b4;position: absolute;top: 0;display: none;left: 0;z-index:65;width: 240px;">
-            <li><a href="#profile">Profile</a></li>
-            <li><a href="#upload">Upload</a></li>
-            
-            <li><a href="#message">Messages</a></li>
+
+</div>
+<div id="upload">
+<div class="toolbar">
+<center style="margin-inline: 20%;">
+<h1>Upload</h1>
+</center>
+<a class="button leftbutton" href="javascript:void" onmousedown="showMenu()">Menu</a>
+<a class="button slideup" id="infoButton" href="javascript:void">Sign out</a>
+</div>
+<form class="scroll">
+<ul class="edit ">
+<li>Old Password: <input type="password" name="name" placeholder="Old Password" /></li>
+<li>New Password: <input type="password" name="chno" placeholder="New Password" /></li>
+<li>Retype New Password: <input type="password" name="chname" placeholder="Retype New Password" /></li>
+<li><a class="button " href="javascript:void" style="position: static;text-align: center;">Submit</a>
+</li>
+</ul>
+
+</form>
+</div>
+
+</div>
+<ul id="menu" style="margin: 45 0 0 0; height: i0%; color: #b4b4b4;position: absolute;top: 0;display: none;left: 0;z-index:65;width: 240px;">
+<li><a href="#profile">Profile</a></li>
+<li><a href="#upload">Upload</a></li>
+
+
 <li><a href="#pass">Change Password</a></li>
-        </ul>
+<li><a href="javascript:void">Sign Out </a></li>
+</ul>
 <script>
-    function showMenu() {
-        console.log('menu clicked')
-        if (document.getElementById("menu").style.display == "none") {
-            document.getElementById("menu").style.display = "block";
-        } else {
-            document.getElementById("menu").style.display = "none"
-        }
-    }
+function showMenu() {
+console.log('menu clicked')
+if (document.getElementById("menu").style.display == "none") {
+document.getElementById("menu").style.display = "block";
+} else {
+document.getElementById("menu").style.display = "none"
+}
+}
 </script>
