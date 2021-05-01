@@ -1,12 +1,55 @@
-<div id="dashboard">
+<div id="profile">
     <div class="toolbar">
         <center style="margin-inline: 20%;">
-            <h1>Dashboard</h1>
+            <h1>Profile</h1>
         </center>
         <a class="button leftbutton" href="javascript:void" onmousedown="showMenu()">Menu</a>
         <a class="button slideup" id="infoButton" href="javascript:void">Sign out</a>
-    </div>    <div class="scroll">
-    </div>
+    </div>    <form class="scroll">
+<ul class=edit>
+<li>
+<input type="file" 
+    class="filepond"
+    name="filepond"
+    accept="image/png, image/jpeg, image/gif"/> </li>
+<li>Username: <input disabled type="text" name="name" placeholder="Naruto" /></li>
+<li>Email: <input type="text" name="chname" placeholder="Chapter Name" /></li>
+
+<script>
+// We register the plugins required to do 
+// image previews, cropping, resizing, etc.
+FilePond.registerPlugin(
+  FilePondPluginFileValidateType,
+  FilePondPluginImageExifOrientation,
+  FilePondPluginImagePreview,
+  FilePondPluginImageCrop,
+  FilePondPluginImageResize,
+  FilePondPluginImageTransform,
+  FilePondPluginImageEdit
+);
+
+// Select the file input and use 
+// create() to turn it into a pond
+FilePond.create(
+  document.querySelector('input'),
+  {
+    labelIdle: `Drag & Drop your picture or <span class="filepond--label-action">Browse</span>`,
+    imagePreviewHeight: 170,
+    imageCropAspectRatio: '1:1',
+    imageResizeTargetWidth: 200,
+    imageResizeTargetHeight: 200,
+    stylePanelLayout: 'compact circle',
+    styleLoadIndicatorPosition: 'center bottom',
+    styleProgressIndicatorPosition: 'right bottom',
+    styleButtonRemoveItemPosition: 'left bottom',
+    styleButtonProcessItemPosition: 'right bottom',
+  }
+);
+</script>
+<li><a class="button " href="javascript:void" style="position: static;text-align: center;">Submit</a>
+            </li>
+             </ul>
+    </form>
         
 </div>
 <div id="upload">
@@ -27,7 +70,8 @@
     multiple 
     data-allow-reorder="true"
     data-max-file-size="3MB"
-    data-max-files="3">
+    data-max-files="512"
+accept="image/png, image/jpeg, image/gif">
 </li>
             <li><a class="button " href="javascript:void" style="position: static;text-align: center;">Submit</a>
             </li>
@@ -58,11 +102,11 @@ FilePond.create(
         
 </div>
 <ul id="menu"  style="margin: 45 0 0 0; height: i0%; color: #b4b4b4;position: absolute;top: 0;display: none;left: 0;z-index:65;width: 240px;">
-            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#profile">Profile</a></li>
             <li><a href="#upload">Upload</a></li>
-            <li><a href="">Comments</a></li>
-            <li><a href="">Messages</a></li>
-            <li><a href="">Analytics</a></li>
+            
+            <li><a href="#message">Messages</a></li>
+<li><a href="#pass">Change Password</a></li>
         </ul>
 <script>
     function showMenu() {
