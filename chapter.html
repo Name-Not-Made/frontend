@@ -1,4 +1,5 @@
 <div id="chapter">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <div id="topbar" class="toolbar">
     <h1>Chapter name</h1>
     <a class="back" href="#">Back</a><a class="button" onclick='showMenu("menu")' href="javascript:void">Settings</a>
@@ -8,9 +9,25 @@
     </div>
     <div onclick="plusDivs(1)" style="position:fixed;right:0;top:0; height:100%;width:40%;background-color:transparent;">
     </div> -->
-    <div style="width:400℅">
-    <img src="img/1.png" class="page" alt=""><img src="img/2.png" class="page" alt=""><img src="img/3.png" class="page" alt="">
-    </div>
+    <!-- Slider main container -->
+<div class="swiper-container">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide"><img class="page" src="" ></div>
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div>
+     
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+  <!-- If we need scrollbar -->
+</div>
     <a href="javascript:void" onclick="toggleFullScreen()" class="button" style="position:fixed;bottom:5px;z-index:267">  &#x26F6; </a>
   </div>
   <div id="bottombar" style='top: auto;bottom: 0px;background-color: #1a1a1a;' class="toolbar">
@@ -88,9 +105,31 @@
     width: 120px;
     z-index: 287;
   }
+  .swiper-container {
+  width: 100%;
+  height: 100%;
+}
 </style>
 
 <script>
+  const swiper = new Swiper('.swiper-container', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: false,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+});
   var islefttoright = true;
   var isdoublepage = false;
   var isvertical = false;
