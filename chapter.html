@@ -113,7 +113,8 @@
 
 <script>
   Var swiper = new Swiper('.swiper-container', {
-  
+  observer: true,
+  observeParents: true,
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
