@@ -4,10 +4,10 @@
     <h1>Chapter name</h1>
     <a class="back" href="#">Back</a><a class="button" onclick='showMenu("menu")' href="javascript:void">Settings</a>
   </div>
-  <div id="mangabg" onclick="plusDivs(1)" class="scroll">
-  <!--  <div onclick="plusDivs(-1)" style="position:fixed;left:0;top:0; height:100%;width:40%;background-color:transparent;">
+  <div id="mangabg" onclick="swiper.slideNext(69)" class="scroll">
+  <!--  <div onclick="swiper.slidePrev(69)" style="position:fixed;left:0;top:0; height:100%;width:40%;background-color:transparent;">
     </div>
-    <div onclick="plusDivs(1)" style="position:fixed;right:0;top:0; height:100%;width:40%;background-color:transparent;">
+    <div onclick="swiper.slideNext(69)" style="position:fixed;right:0;top:0; height:100%;width:40%;background-color:transparent;">
     </div> -->
     <!-- Slider main container -->
 <div class="swiper-container">
@@ -127,6 +127,7 @@
     prevEl: '.swiper-button-prev',
   },
 });
+swiper.init();
   var islefttoright = true;
   var isdoublepage = false;
   var isvertical = false;
@@ -150,8 +151,8 @@
 
   var slideIndex = 1;
   showDivs(slideIndex);
-  currentpage.innerHTML = slideIndex;
-  allpage.innerHTML = images.length;
+  currentpage.innerHTML = swiper.realIndex;
+  allpage.innerHTML = swiper.slides.length;
   var navlayoutbtn = document.getElementById("navlayoutbtn");
   function lefttoright() {
     islefttoright = true;
