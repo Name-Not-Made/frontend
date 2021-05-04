@@ -4,7 +4,7 @@
     <h1>Chapter name</h1>
     <a class="back" href="#">Back</a><a class="button" onclick='showMenu("menu")' href="javascript:void">Settings</a>
   </div>
-  <div id="mangabg" onclick="swiper.slideNext(69)" class="scroll">
+  <div id="mangabg" class="scroll">
   <!--  <div onclick="swiper.slidePrev(69)" style="position:fixed;left:0;top:0; height:100%;width:40%;background-color:transparent;">
     </div>
     <div onclick="swiper.slideNext(69)" style="position:fixed;right:0;top:0; height:100%;width:40%;background-color:transparent;">
@@ -32,9 +32,10 @@
   </div>
   <div id="bottombar" style='top: auto;bottom: 0px;background-color: #1a1a1a;' class="toolbar">
     <h1><span id="currentpage">nn</span> /<span id="allpage">nn</span></h1>
-    <a style="left: auto; margin-right: 70px; right: 50%;" onclick="showDivs(images.length-1)" class="button leftbutton" href="javascript:void">&#10094;&#10094;</a>
-    <a style="left: 50%;margin-left:70;right: auto;" class="button" onclick="showDivs(0)" href="javascript:void">&#10095;&#10095;</a><a onclick="plusDivs(-1)" id="prev-button" class="button leftbutton" style="left: auto; right:50%;margin-right:40;" href="javascript:void">&#10094;</a>
-    <a style="left: 50%; margin-left: 40px; right: auto;" id="next-button" class="button" onclick="plusDivs(1)" href="javascript:void">&#10095;</a>
+    <a style="left: auto; margin-right: 70px; right: 50%;" onclick="swiper.slideTo(swiper.slides.length,69)" class="button leftbutton" href="javascript:void">&#10094;&#10094;</a>
+    <a style="left: 50%;margin-left:70;right: auto;" class="button" onclick="swiper.slideTo(0,69)" href="javascript:void">&#10095;&#10095;</a>
+    <a onclick="swiper.slidePrev(69)" id="prev-button" class="button leftbutton" style="left: auto; right:50%;margin-right:40;" href="javascript:void">&#10094;</a>
+    <a style="left: 50%; margin-left: 40px; right: auto;" id="next-button" class="button" onclick="swiper.slideNext(69)" href="javascript:void">&#10095;</a>
 
 
 
