@@ -137,7 +137,8 @@ swiper.on('slideChange', function () {
   var isvertical = false;
   var currentpage = document.getElementById("currentpage")
   var allpage = document.getElementById("allpage");
-  var images = document.getElementsByClassName("swiper-slide");
+  var Images = document.getElementsByClassName("swiper-slide");
+  var images = document.getElementsByClassName("page");
   var slider = document.getElementById("zoomslider");
   var leftbutton = document.getElementById("prev-button");
   var rightbutton = document.getElementById("next-button");
@@ -156,7 +157,7 @@ swiper.on('slideChange', function () {
   var slideIndex = 1;
   showDivs(slideIndex);
   currentpage.innerHTML = swiper.activeIndex + 1;
-  allpage.innerHTML = images.length;
+  allpage.innerHTML = Images.length;
   var navlayoutbtn = document.getElementById("navlayoutbtn");
   function lefttoright() {
     islefttoright = true;
