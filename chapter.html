@@ -129,6 +129,9 @@
   },
 });
 swiper.init();
+swiper.on('slideChange', function () {
+  currentpage.innerHTML = swiper.activeIndex;
+});
   var islefttoright = true;
   var isdoublepage = false;
   var isvertical = false;
