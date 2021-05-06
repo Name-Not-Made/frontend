@@ -22,10 +22,17 @@
                 </center>
                 <a href="search.html" class="button searchbtn">
                     <img alt="Search" style="margin-top: 3;" src="img/icon-search.png" alt=""></a>
-                <a class="button leftbutton" href="#">Menu</a>
+                <a class="button leftbutton" onclick="showMenu('menu')" href="javascript:void">Menu</a>
                 <a class="button slideup" id="infoButton" href="login.html">Login</a>
             </div>
             <div class="scroll">
+            <ul id="menu"  style="margin: 45 0 0 0; height: 90%; color: #b4b4b4;position: absolute;top: 0;display: none;left: 0;width: 240px;">
+              <li><a href="">Home</a></li>
+              <li><a href="">Genre</a></li>
+              <li><a href="">A random menu item</a></li>
+              <li><a href="">Messages</a></li>
+              <li><a href="">Analytics</a></li>
+            </ul>
                 <center>
                     <ul class="individual">
                     </ul>
@@ -49,6 +56,14 @@
         $(function () {
             // Custom Javascript (onReady)
         });
+        function showMenu(menuid) {
+        console.log('menu clicked')
+        if (document.getElementById(menuid).style.display == "none") {
+            document.getElementById(menuid).style.display = "block";
+        } else {
+            document.getElementById(menuid).style.display = "none"
+        }
+    }
     </script>
 <script async src="js/browser.js"></script>
 </body>
