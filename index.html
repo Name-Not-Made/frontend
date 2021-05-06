@@ -20,7 +20,8 @@
                 <center style="margin-inline: 20%;"><input class="si" type="search" name="search" placeholder="Search"
                         id="some_name" />
                 </center>
-                <a href="search.html" style="color: transparent; text-shadow: 0 0 0 #b4b4b4;" class="button searchbtn">🔍</a>
+                <a href="search.html" class="button searchbtn">
+                    <img alt="Search" style="margin-top: 3;" src="img/icon-search.png" alt=""></a>
                 <a class="button leftbutton" href="#">Menu</a>
                 <a class="button slideup" id="infoButton" href="login.html">Login</a>
             </div>
@@ -38,7 +39,7 @@
     <script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/jqt.js" type="text/javascript" charset="utf-8"></script>    
 <script type="text/javascript" charset="utf-8">
-       var jQT = new $.jQTouch({
+       var jQT = new $.jQT({
             icon: 'jqtouch.png',
             addGlossToIcon: false,
             startupScreen: 'jqt_startup.png',
@@ -50,8 +51,6 @@
         });
     </script>
 <script async src="js/browser.js"></script>
-<script src="https://unpkg.com/filepond/dist/filepond.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </body>
 
 </html>
