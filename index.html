@@ -21,18 +21,22 @@
                         id="some_name" />
                 </center>
                 <a href="search.html" class="button searchbtn">
-                    <img alt="Search" style="margin-top: 3;" src="img/icon-search.png" alt=""></a>
+                  <svg style="width:23;" viewBox="0 0 24 24" class="h-6 w-6 fill-current">
+                    <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </a>
                 <a class="button leftbutton" onclick="showMenu('menu')" href="javascript:void">Menu</a>
                 <a class="button slideup" id="infoButton" href="login.html">Login</a>
             </div>
-            <div class="scroll">
-            <ul id="menu"  style="margin: 45 0 0 0; height: 90%; color: #b4b4b4;position: absolute;top: 0;display: none;left: 0;width: 240px;">
+            <ul id="menu"  style="position:fixed;margin:42 0 0 0; height: 100%;z-index:15; color: #b4b4b4;top: 0;display: none;left: 0;width: 150px;">
               <li><a href="">Home</a></li>
               <li><a href="">Genre</a></li>
               <li><a href="">A random menu item</a></li>
               <li><a href="">Messages</a></li>
               <li><a href="">Analytics</a></li>
             </ul>
+
+            <div id="container" class="scroll">
                 <center>
                     <ul class="individual">
                     </ul>
@@ -60,8 +64,14 @@
         console.log('menu clicked')
         if (document.getElementById(menuid).style.display == "none") {
             document.getElementById(menuid).style.display = "block";
+          if (menuid="menu") {
+            document.getElementById("container").style.marginLeft = "150"
+          }
         } else {
             document.getElementById(menuid).style.display = "none"
+          if (menuid="menu") {
+            document.getElementById("container").style.marginLeft = "0"
+          }
         }
     }
     </script>
