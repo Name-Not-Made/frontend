@@ -25,14 +25,14 @@
                     <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                   </svg>
                 </a>
-                <a class="button leftbutton" onclick="showMenu('menu')" href="javascript:void">Menu</a>
+                <a id="menubutton" class="button leftbutton" onclick="showMenu('menu')" href="javascript:void">Menu</a>
                 <a class="button slideup" id="infoButton" href="login.html">Login</a>
             </div>
             <ul id="menu"  style="position:fixed;margin:42 0 0 0; height: 100%;z-index:15; color: #b4b4b4;top: 0;display: none;left: 0;width: 150px;">
               <li><a href="">Home</a></li>
-              <li><a href="">Genre</a></li>
+              <li><a href="">Genre</a></li><div id="genres">
               <li><a href="">A random menu item</a></li>
-              <li><a href="">Messages</a></li>
+              </div><li><a href="">Messages</a></li>
               <li><a href="">Analytics</a></li>
             </ul>
 
@@ -65,12 +65,14 @@
         if (document.getElementById(menuid).style.display == "none") {
             document.getElementById(menuid).style.display = "block";
           if (menuid="menu") {
+            document.getElementById("menubutton").innerHTML = "Close"
             document.getElementById("container").style.marginLeft = "150"
           }
         } else {
             document.getElementById(menuid).style.display = "none"
           if (menuid="menu") {
             document.getElementById("container").style.marginLeft = "0"
+            document.getElementById("menubutton").innerHTML = "Menu"
           }
         }
     }
