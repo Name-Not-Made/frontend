@@ -199,11 +199,30 @@ swiper.on('slideChange', function () {
     isdoublepage = true;
     pagelayoutbtn.innerHTML = " Double Page";
     hidemenus();
-    swiper.params.direction = "horizontal";
+swiper = new Swiper('.swiper-container', {
+  observer: true,
+  observeParents: true,
+  zoom: true,
+  slidesPerView: 2,
+  direction: horizontal,
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+swiper.init();
+    /**swiper.params.direction = "horizontal";
     swiper.params.slidesPerView = 2;
     swiper.reInit();
     swiper.resizeHandler();
-    /**leftbutton.setAttribute('onclick', 'plusDivs(-1)');
+    leftbutton.setAttribute('onclick', 'plusDivs(-1)');
     pagelayoutbtn.innerHTML = " Double Page";
     hidemenus();
     rightbutton.setAttribute('onclick', 'plusDivs(1)');
@@ -230,9 +249,25 @@ swiper.on('slideChange', function () {
 
     pagelayoutbtn.innerHTML = "Single Page";
     hidemenus();
-    swiper.params.direction = "horizontal";
-    swiper.params.slidesPerView = 1;
-    swiper.reInit();
+    swiper = new Swiper('.swiper-container', {
+  observer: true,
+  observeParents: true,
+  zoom: true,
+  slidesPerView: 1,
+  direction: horizontal,
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+swiper.init();
     lefttoright();
 
   }
