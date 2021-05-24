@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+.btn {
+    @apply hover:bg-gray-700 font-bold text-gray-50 px-4 p-2 inline-block;
+}
+@tailwind utilities;
