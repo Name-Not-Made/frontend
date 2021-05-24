@@ -1,126 +1,64 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/vanilla.css">
-    <title>Manga app</title>
-
-    <style type="text/css" media="screen">
-
-    </style>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/tailwind.css">
 </head>
 
-<body>
-    <div id="jqt">
-
-        <div id="home" class="current">
-            <div class="toolbar">
-                <center style="margin-inline: 20%;"><input class="si" type="search" name="search" placeholder="Search"
-                        id="some_name" />
-                </center>
-                <a href="search.html" class="button searchbtn">
-                  <svg style="width:23;" viewBox="0 0 24 24" class="h-6 w-6 fill-current">
-                    <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </a>
-                <a id="menubutton" class="button leftbutton" onclick="showMenu('menu')" href="javascript:void">Menu</a>
-                <a class="button slideup" id="infoButton" href="login.html">Login</a>
-            </div>
-            <ul id="menu"  style="position:fixed;margin:42 0 0 0; height: 100%;z-index:15; color: #b4b4b4;top: 0;display: none;left: 0;width: 150px;">
-              <li><a href="">Home</a></li>
-              <li><a href="">Genre</a></li><div id="genres">
-<li><a href="genre/1">Action</a></li>
-<li><a href="genre/2">Adventure</a></li>
-<li><a href="genre/3">Comedy</a></li>
-<li><a href="genre/4">Drama</a></li>
-<li><a href="genre/5">Slice of Life</a></li>
-<li><a href="genre/6">Fantasy</a></li>
-<li><a href="genre/7">Magic</a></li>
-<li><a href="genre/8">Supernatural</a></li>
-<li><a href="genre/9">Horror</a></li>
-<li><a href="genre/10">Mystery</a></li>
-<li><a href="genre/11">Psychological</a></li>
-<li><a href="genre/12">Romance</a></li>
-<li><a href="genre/13">Sci-Fi</a></li>
-<li><a href="genre/14">Cyberpunk</a></li>
-<li><a href="genre/15">Game</a></li>
-<li><a href="genre/16">Ecchi</a></li>
-<li><a href="genre/17">Demons</a></li>
-<li><a href="genre/18">Harem</a></li>
-<li><a href="genre/19">Josei</a></li>
-<li><a href="genre/20">Martial Arts</a></li>
-<li><a href="genre/21">Kids</a></li>
-<li><a href="genre/22">Historical</a></li>
-<li><a href="genre/23">Hentai</a></li>
-<li><a href="genre/24">Isekai</a></li>
-<li><a href="genre/25">Military</a></li>
-<li><a href="genre/26">Mecha</a></li>
-<li><a href="genre/27">Music</a></li>
-<li><a href="genre/28">Parody</a></li>
-<li><a href="genre/29">Police</a></li>
-<li><a href="genre/30">Post-Apocalyptic</a></li>
-<li><a href="genre/31">Reverse Harem</a></li>
-<li><a href="genre/32">School</a></li>
-<li><a href="genre/33">Seinen</a></li>
-<li><a href="genre/34">Shoujo</a></li>
-<li><a href="genre/35">Shoujo-ai</a></li>
-<li><a href="genre/36">Shounen</a></li>
-<li><a href="genre/37">Shounen-ai</a></li>
-<li><a href="genre/38">Space</a></li>
-<li><a href="genre/39">Sports</a></li>
-<li><a href="genre/40">Super Power</a></li>
-<li><a href="genre/41">Tragedy</a></li>
-<li><a href="genre/42">Vampire</a></li>
-<li><a href="genre/43">Yuri</a></li>
-<li><a href="genre/44">Yaoi</a></li>
-              </div>
-              <li><a href="">Analytics</a></li>
-            </ul>
-
-            <div id="container" class="scroll">
-                <center>
-                    <ul class="individual">
-                    </ul>
-                </center>
-
-            </div>
-
-
+<body class="m-0 bg-gray-800">
+    <div class=" top-0 w-full fixed bg-gray-900">
+        <a class=" btn">
+            <svg xmlns="http://www.w3.org/2000/svg" class="-mt-1 h-6 w-6 inline  " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg> 
+              Menu
+        </a>
+        <a class="btn float-right">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline " fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+              </svg>Login
+        </a>
+        <input placeholder="Search..." style="width: calc(80vw - 10rem);margin-left:10vw;"
+            class=" bg-gray-700 hidden text-gray-50 appearance-none focus:ring-gray-600 px-3 py-2 focus:border-gray-600 flex-1 border-gray-800 sm:inline-block"
+            type="text" name="search" id="search">
+            <a class="btn p-0 float-right sm:float-none" href=""><svg xmlns="http://www.w3.org/2000/svg" class=" sm:-left-10 inline relative h-6 w-6 mt-2 sm:-mt-1 text-gray-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg></a>
+    </div>
+    <ul style="width: calc(15vw + 5rem);" class=" bg-gray-900 h-full fixed left-0 top-11 ">
+        <li><a href="" class="hover:bg-gray-700 font-bold text-gray-50 px-4 w-full p-2 inline-block">fefe</a></li>
+        <li><a href="" class="hover:bg-gray-700 font-bold text-gray-50 px-4 w-full p-2 inline-block">fefe</a></li>
+        <li><a href="" class="hover:bg-gray-700 font-bold text-gray-50 px-4 w-full p-2 inline-block">fefe</a></li>
+        <li><a href="" class="hover:bg-gray-700 font-bold text-gray-50 px-4 w-full p-2 inline-block">fefe</a></li>
+        <li><a href="" class="hover:bg-gray-700 font-bold text-gray-50 px-4 w-full p-2 inline-block">fefe</a></li>
+        <li><a href="" class="hover:bg-gray-700 font-bold text-gray-50 px-4 w-full p-2 inline-block">fefe</a></li>
+        <li><a href="" class="hover:bg-gray-700 font-bold text-gray-50 px-4 w-full p-2 inline-block">fefe</a></li>
+        <li><a href="" class="hover:bg-gray-700 font-bold text-gray-50 px-4 w-full p-2 inline-block">fefe</a></li>
+        <li><a href="" class="hover:bg-gray-700 font-bold text-gray-50 px-4 w-full p-2 inline-block">fefe</a></li>
+        <li><a href="" class="hover:bg-gray-700 font-bold text-gray-50 px-4 w-full p-2 inline-block">fefe</a></li>
+    </ul>
+    <div
+        class="my-16  text-gray-50 mx-4 gap-4 text-sm grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10">
+        <div class="">
+            <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx120697-72Sf22C9PTQn.jpg" alt="">
+            <h1 class=" font-bold">Ijiranaide, Nagatoro-san</h1>
+            Chapter 12
         </div>
-
-    <script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/jqt.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" charset="utf-8">
-       var jQT = new $.jQT({
-            icon: 'jqtouch.png',
-            addGlossToIcon: false,
-            startupScreen: 'jqt_startup.png',
-            statusBar: 'black'
-        });
-
-        $(function () {
-            // Custom Javascript (onReady)
-        });
-        function showMenu(menuid) {
-        console.log('menu clicked')
-        if (document.getElementById(menuid).style.display == "none") {
-            document.getElementById(menuid).style.display = "block";
-          if (menuid="menu") {
-            document.getElementById("menubutton").innerHTML = "Close"
-            document.getElementById("container").style.marginLeft = "150"
-          }
-        } else {
-            document.getElementById(menuid).style.display = "none"
-          if (menuid="menu") {
-            document.getElementById("container").style.marginLeft = "0"
-            document.getElementById("menubutton").innerHTML = "Menu"
-          }
-        }
-    }
-    </script>
-<script async src="js/browser.js"></script>
+        <div class="">
+            <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx120697-72Sf22C9PTQn.jpg" alt="">
+            <h1 class=" text-white text-base font-bold">Ijiranaide, Nagatoro-san</h1>
+            Chapter 12
+        </div>
+        <div class="">
+            <img src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx120697-72Sf22C9PTQn.jpg" alt="">
+            <h1 class=" text-white text-base font-bold">Ijiranaide, Nagatoro-san</h1>
+            Chapter 12
+        </div>
+    </div>
 </body>
 
 </html>

@@ -1,34 +1,135 @@
-<div id="get">
-    <div class="toolbar">
-        <h1>Manga name</h1>
-        <a class="back" href="#">Back</a>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/tailwind.css">
+</head>
+
+<body class="m-0 bg-gray-800">
+    <div class=" top-0 w-full fixed bg-gray-900">
+        <a class=" hover:bg-gray-700 font-bold text-gray-50 px-4 p-2 inline-block">
+            <svg xmlns="http://www.w3.org/2000/svg" class="-mt-1 h-6 w-6 inline" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414 6.414a2 2 0 001.414.586H19a2 2 0 002-2V7a2 2 0 00-2-2h-8.172a2 2 0 00-1.414.586L3 12z" />
+            </svg>
+            Back
+        </a>
+        <h1 class=" left-1/2 absolute top-1.5 inline-block text-center text-gray-50 w-64 -ml-32 font-bold">Manga Name
+        </h1>
+
     </div>
-    <div class="info">
-        <div><img style="float: left;max-width: 240px;" width="30%" 
-                src=''></div>
-        <div style="min-width: 240px;margin-top: 10%;">
-            <h1>manga name</h1>
+    <div class="text-xs leading-4 text-center p-4 font-bold grid-cols-2">
+        <img class=" mt-16 float-left w-1/3 inline" style="max-width: 240px;"
+            src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx120697-72Sf22C9PTQn.jpg" alt="">
+        <div class=" text-gray-50" style="min-width: 240px;margin-top: 10%;">
+            <h1 class=" text-xl">manga name</h1>
             <hr>
-            <p style="margin: 10px;color: #b4b4b4;">manga description</p>
-            <ul id="mangainfo" style="margin-left: 40%;"><li>Authur: test</li>
-<li>Genre: Action</li><li>Rating: 9.4/10</li>
-                <li>Ongoing</li>
-                <li>Last updated 30 minutes ago</li>
-                <li>Published on 21 Augus 2018</li> 
+            <div class=" h-auto leading-relaxed grid md:grid-cols-2">
+                <p class="  m-4 mb-0 text-sm ">manga description</p>
+                <ul id="mangainfo" class="p-3 leading-loose bg-gray-700 float-right text-xs mt-2 m-4 block">
+                    <li>Authur: test</li>
+                    <li>Genre: Action</li>
+                    <li>Rating: 9.4/10</li>
+                    <li>Ongoing</li>
+                    <li>Last updated 30 minutes ago</li>
+                    <li>Published on 21 Augus 2018</li>
 
                 </ul>
-		<a style="top:auto;bottom:auto;left:5;right:auto;" class=" button">Bookmark</a>
-            <h1 style="float:right; position: relative; margin-bottom: 0px;"> 10 chapters</h1>
+            </div>
+            <div class="  ">
+                <a class=" btn border-gray-300 border mt-4"><svg xmlns="http://www.w3.org/2000/svg"
+                        class=" inline -mt-0.5 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg> Read</a>
+
+                <a class="btn ml-1 border-gray-300 border mt-4"><svg xmlns="http://www.w3.org/2000/svg"
+                        class=" inline -mt-0.5 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+                    </svg> Bookmark</a>
+                <a class=" ml-1 btn border-gray-300 border mt-4">Follow</a>
+                <a class=" ml-1 btn border-gray-300 border mt-4"><svg xmlns="http://www.w3.org/2000/svg"
+                        class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                    </svg> Report</a>
+            </div>
+            <h1 class="float-right right-0 relative mt-16 text-xl"> 10 chapters</h1>
         </div>
-      <style>#jqt #mangainfo li {
-padding: 2px;}
-      #jqt .chapterlist li a div {display:inline;} .chapterinfo {margin-right:30%;float:right;font-size:.75em;}#jqt ul li .button {height:20px;padding:2 5 10 5;top:5px;}</style>
 
-    </div>  <ul class="chapterlist" style="margin-top:0;"><li><a href=""></a></li>
-	    <li><a href="chapter.html"><div class="chapterno">Chapter 1</div>
-			    <div class="chapterinfo"><img src="img/1.png" width=10 height=10 > uploaded by nm <br> 23 hours ago</div> </a>
-	<a class="button">Comments</a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li></ul>
+    </div>
+    <br>
+    <ul class="w-full grid grid-flow-row mt-16">
+        <li class="bg-[#19222d] text-white"><a href="chapter.html">
+                <div class=" mt-2.5 ml-8 inline float-left"><img class="inline" src="img/1.png" width="20" height="20">
+                    Chapter 1</div>
+            </a>
+            <div class=" mt-1 absolute -ml-11 w-32 text-center left-1/2 float-left text-xs inline"><img class="inline"
+                src="img/1.png" width="10" height="10">
+            uploaded by nm <br> 23 hours ago</div>
 
-</div>
+        <a class="btn p-3 float-right inline"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+            </svg></a><a class="btn float-right inline"><svg xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 -mt-0.5 -ml-0.5 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg> <span class=" hidden sm:inline"> Comments</span> </a>
+
+        </li>
+        <li class="bg-[#1c2533] text-white"><a href="chapter.html">
+                <div class=" mt-2.5 ml-8 inline float-left"><img class="inline" src="img/1.png" width="20" height="20">
+                    Chapter 2</div>
+            </a>
+            <div class=" mt-1 absolute -ml-11 w-32 text-center left-1/2 float-left text-xs inline"><img class="inline"
+                    src="img/1.png" width="10" height="10">
+                uploaded by nm <br> 23 hours ago</div>
+
+            <a class="btn p-3 float-right inline"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                </svg></a><a class="btn float-right inline"><svg xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4 -mt-0.5 -ml-0.5 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg> <span class=" hidden sm:inline"> Comments</span> </a>
+
+
+        </li>
+    </ul>
+    <div>
+
+        <h1 class="float-right font-bold text-white mr-4 mb-4 right-0 relative mt-16 text-xl"> 10 Comments</h1>
+
+        <ul class="w-full grid grid-flow-row mt-16">
+            <li class="bg-[#19222d] text-white"><a href="chapter.html">
+                <img class=" mt-2 ml-2 inline" src="" width="48" height="48">
+                <span class="ml-2 mt-2">Username</span>
+                <span class=" text-xs float-right inline mt-4 mr-4">badge</span>
+                </a>
+                <div class=" mt-2 mx-4 text-sm block">
+                    Qui non dolorum voluptas corrupti a dolorem et. Placeat vel sunt saepe. Eveniet aliquam voluptate
+                    perspiciatis nemo.
+                </div>
+                <a class="btn p-3 float-right inline"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                    </svg></a>
+
+            </li>
+          
+        </ul>
+    </div>
+</body>
+
+</html>
