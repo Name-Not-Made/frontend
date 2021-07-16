@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+.btn {
+    @apply hover:bg-gray-700 font-bold text-gray-50 px-4 p-2 inline-block;
+}
+.menuitem {
+     @apply hover:bg-gray-700 font-bold text-gray-50 px-4 w-full p-2 inline-block;
+}
+@tailwind utilities;
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(75, 85, 99,1);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(156, 163, 175);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(107, 114, 128);
+  }

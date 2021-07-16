@@ -1,126 +1,13 @@
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/vanilla.css">
-    <title>Manga app</title>
-
-    <style type="text/css" media="screen">
-
-    </style>
-</head>
-
-<body>
-    <div id="jqt">
-
-        <div id="home" class="current">
-            <div class="toolbar">
-                <center style="margin-inline: 20%;"><input class="si" type="search" name="search" placeholder="Search"
-                        id="some_name" />
-                </center>
-                <a href="search.html" class="button searchbtn">
-                  <svg style="width:23;" viewBox="0 0 24 24" class="h-6 w-6 fill-current">
-                    <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </a>
-                <a id="menubutton" class="button leftbutton" onclick="showMenu('menu')" href="javascript:void">Menu</a>
-                <a class="button slideup" id="infoButton" href="login.html">Login</a>
-            </div>
-            <ul id="menu"  style="position:fixed;margin:42 0 0 0; height: 100%;z-index:15; color: #b4b4b4;top: 0;display: none;left: 0;width: 150px;">
-              <li><a href="">Home</a></li>
-              <li><a href="">Genre</a></li><div id="genres">
-<li><a href="genre/1">Action</a></li>
-<li><a href="genre/2">Adventure</a></li>
-<li><a href="genre/3">Comedy</a></li>
-<li><a href="genre/4">Drama</a></li>
-<li><a href="genre/5">Slice of Life</a></li>
-<li><a href="genre/6">Fantasy</a></li>
-<li><a href="genre/7">Magic</a></li>
-<li><a href="genre/8">Supernatural</a></li>
-<li><a href="genre/9">Horror</a></li>
-<li><a href="genre/10">Mystery</a></li>
-<li><a href="genre/11">Psychological</a></li>
-<li><a href="genre/12">Romance</a></li>
-<li><a href="genre/13">Sci-Fi</a></li>
-<li><a href="genre/14">Cyberpunk</a></li>
-<li><a href="genre/15">Game</a></li>
-<li><a href="genre/16">Ecchi</a></li>
-<li><a href="genre/17">Demons</a></li>
-<li><a href="genre/18">Harem</a></li>
-<li><a href="genre/19">Josei</a></li>
-<li><a href="genre/20">Martial Arts</a></li>
-<li><a href="genre/21">Kids</a></li>
-<li><a href="genre/22">Historical</a></li>
-<li><a href="genre/23">Hentai</a></li>
-<li><a href="genre/24">Isekai</a></li>
-<li><a href="genre/25">Military</a></li>
-<li><a href="genre/26">Mecha</a></li>
-<li><a href="genre/27">Music</a></li>
-<li><a href="genre/28">Parody</a></li>
-<li><a href="genre/29">Police</a></li>
-<li><a href="genre/30">Post-Apocalyptic</a></li>
-<li><a href="genre/31">Reverse Harem</a></li>
-<li><a href="genre/32">School</a></li>
-<li><a href="genre/33">Seinen</a></li>
-<li><a href="genre/34">Shoujo</a></li>
-<li><a href="genre/35">Shoujo-ai</a></li>
-<li><a href="genre/36">Shounen</a></li>
-<li><a href="genre/37">Shounen-ai</a></li>
-<li><a href="genre/38">Space</a></li>
-<li><a href="genre/39">Sports</a></li>
-<li><a href="genre/40">Super Power</a></li>
-<li><a href="genre/41">Tragedy</a></li>
-<li><a href="genre/42">Vampire</a></li>
-<li><a href="genre/43">Yuri</a></li>
-<li><a href="genre/44">Yaoi</a></li>
-              </div>
-              <li><a href="">Analytics</a></li>
-            </ul>
-
-            <div id="container" class="scroll">
-                <center>
-                    <ul class="individual">
-                    </ul>
-                </center>
-
-            </div>
-
-
-        </div>
-
-    <script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/jqt.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" charset="utf-8">
-       var jQT = new $.jQT({
-            icon: 'jqtouch.png',
-            addGlossToIcon: false,
-            startupScreen: 'jqt_startup.png',
-            statusBar: 'black'
-        });
-
-        $(function () {
-            // Custom Javascript (onReady)
-        });
-        function showMenu(menuid) {
-        console.log('menu clicked')
-        if (document.getElementById(menuid).style.display == "none") {
-            document.getElementById(menuid).style.display = "block";
-          if (menuid="menu") {
-            document.getElementById("menubutton").innerHTML = "Close"
-            document.getElementById("container").style.marginLeft = "150"
-          }
-        } else {
-            document.getElementById(menuid).style.display = "none"
-          if (menuid="menu") {
-            document.getElementById("container").style.marginLeft = "0"
-            document.getElementById("menubutton").innerHTML = "Menu"
-          }
-        }
-    }
-    </script>
-<script async src="js/browser.js"></script>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body style="background-color: #112233;">
+    <div id="app"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
